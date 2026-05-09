@@ -584,6 +584,57 @@ td a:hover, p a:hover {
   border-color: var(--border);
 }
 
+/* ── Phase group (SOW scope-of-work hierarchy) ────── */
+
+.phase-group {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid hsl(33 18% 92%);
+}
+
+.phase-group:first-of-type {
+  margin-top: 8px;
+  padding-top: 0;
+  border-top: none;
+}
+
+.phase-group .phase-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.phase-group h3 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 16px;
+  letter-spacing: -0.005em;
+  color: var(--fg);
+}
+
+.phase-group .phase-job {
+  color: var(--fg-muted);
+  margin: 0 0 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 640px;
+}
+
+.phase-group ul {
+  margin: 0;
+}
+
+.phase-group ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
 /* ── Pricing summary table (index page) ───────────── */
 
 .pricing-section {
@@ -625,11 +676,26 @@ td a:hover, p a:hover {
   .pricing-section-header { grid-template-columns: 1fr; gap: 16px; }
 }
 
+.pricing-table-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  font-weight: 600;
+  margin: 32px 0 12px;
+}
+
+.pricing-table-title:first-of-type {
+  margin-top: 0;
+}
+
 .pricing-table-wrap {
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--bg-card);
   overflow: hidden;
+  margin-bottom: 16px;
 }
 
 .pricing-table {

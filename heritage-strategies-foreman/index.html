@@ -63,64 +63,65 @@
       <div class="section-body">
         <h2>Scope of work</h2>
 
-        <h3>3.1 &nbsp; Phase 1: Workspace and meeting capture (Months 1 to 2)</h3>
-        <p><strong>Job description.</strong> Foreman sits in on every Monday meeting, turns it into a structured record the team can act on, and gives the team one trustworthy way to ask about client status by chat or voice.</p>
-        <ul>
-          <li>Records and transcribes meetings.</li>
-          <li>For client engagements with a defined cadence, Foreman tracks each prep step (Pre-Internal, IR1, IR2, Partner Review) against the schedule and flags any delays before the next meeting.</li>
-          <li>After each meeting, Foreman drafts a structured post-meeting summary letter from the transcript. Once a Point Person signs off, that letter becomes the source of truth for what was agreed.</li>
-          <li>Action items, owners, and due dates are extracted from the transcript and proposed as tasks. Duplicates are merged automatically.</li>
-          <li>Tasks missing an owner or due date wait in a review queue. They go live only after a Point Person fills in both fields. This enforces the Heritage no-dates standard at the source.</li>
-          <li>Audit trail: every transcript, draft action item, and human approval is timestamped and searchable.</li>
-          <li>A meeting list view shows every upcoming and past meeting at a glance, with type and owner.</li>
-          <li>Schedule changes are flagged and subject to approval.</li>
-          <li>Shared workspace, basic view: a single workspace for Heritage's active client engagements and internal projects. Each project shows current phase, scheduled meetings, open action items, owners, due dates, and source documents.</li>
-          <li>One-time migration from today's Excel meeting trackers and SharePoint scopes. After that, updates flow in from Outlook, recorded meetings, and direct edits in the app.</li>
-          <li>Web and mobile interface.</li>
-        </ul>
+        <div class="phase-group">
+          <p class="phase-label">Phase 1 &middot; Months 1&ndash;2</p>
+          <h3>Workspace, meeting capture, and daily digests</h3>
+          <p class="phase-job">Foreman sits in on every Monday meeting, turns it into a structured record the team can act on, and gives the team one trustworthy way to ask about client status by chat or voice.</p>
+          <ul>
+            <li>Records and transcribes meetings.</li>
+            <li>For client engagements with a defined cadence, Foreman tracks each prep step (Pre-Internal, IR1, IR2, Partner Review) against the schedule and flags any delays before the next meeting.</li>
+            <li>After each meeting, Foreman drafts a structured post-meeting summary letter from the transcript. Once a Point Person signs off, that letter becomes the source of truth for what was agreed.</li>
+            <li>Action items, owners, and due dates are extracted from the transcript and proposed as tasks. Duplicates are merged automatically.</li>
+            <li>Tasks missing an owner or due date wait in a review queue. They go live only after a Point Person fills in both fields. This enforces the Heritage no-dates standard at the source.</li>
+            <li>Audit trail: every transcript, draft action item, and human approval is timestamped and searchable.</li>
+            <li>A meeting list view shows every upcoming and past meeting at a glance, with type and owner.</li>
+            <li>Schedule changes are flagged and subject to approval.</li>
+            <li>Shared workspace, basic view: a single workspace for Heritage's active client engagements and internal projects. Each project shows current phase, scheduled meetings, open action items, owners, due dates, and source documents.</li>
+            <li>One-time migration from today's Excel meeting trackers and SharePoint scopes. After that, updates flow in from Outlook, recorded meetings, and direct edits in the app.</li>
+            <li>Web and mobile interface.</li>
+            <li>Read-only Ask Anything: any team member can ask Foreman a question in plain English by chat or by voice on a phone. Answers come back in seconds, with sources.</li>
+            <li>Every Foreman answer links back to its source (meeting letter, task, or calendar event). Verifiable in one click.</li>
+            <li>Each project or engagement carries a status (On Track, At Risk, Critical) with a plain-language reason. The Monday rundown is built from these statuses.</li>
+            <li>A color-coded view (green, amber, red) makes the Monday rundown readable at a glance.</li>
+            <li>Morning digest: today's meetings, prep gaps, due items, top three risks.</li>
+            <li>End-of-day digest: what was completed, what is overdue, what needs a new commitment.</li>
+            <li>A separate summary covers top risks, schedule changes, and items needing escalation.</li>
+            <li>Completion is set in-app or detected from meeting letters. Overdue or ambiguous items go to the Operations review queue for confirmation. Email-signal completion arrives via the Phase 3 connector.</li>
+            <li>Calendar conflicts, prep gaps, and delegated-item follow-ups surfaced directly to Operations so manual chasing disappears.</li>
+          </ul>
+        </div>
 
-        <h3>3.2 &nbsp; Phase 1: Status line, digests, and follow-up (Months 1 to 2)</h3>
-        <ul>
-          <li>Read-only Ask Anything: any team member can ask Foreman a question in plain English by chat or by voice on a phone. Answers come back in seconds, with sources.</li>
-          <li>Every Foreman answer links back to its source (meeting letter, task, or calendar event). Verifiable in one click.</li>
-          <li>Each project or engagement carries a status (On Track, At Risk, Critical) with a plain-language reason. The Monday rundown is built from these statuses.</li>
-          <li>A color-coded view (green, amber, red) makes the Monday rundown readable at a glance.</li>
-          <li>Morning digest: today's meetings, prep gaps, due items, top three risks.</li>
-          <li>End-of-day digest: what was completed, what is overdue, what needs a new commitment.</li>
-          <li>A separate summary covers top risks, schedule changes, and items needing escalation.</li>
-          <li>Completion is set in-app or detected from meeting letters. Overdue or ambiguous items go to the Operations review queue for confirmation. Email-signal completion arrives via the Phase 3 connector.</li>
-          <li>Calendar conflicts, prep gaps, and delegated-item follow-ups surfaced directly to Operations so manual chasing disappears.</li>
-        </ul>
+        <div class="phase-group">
+          <p class="phase-label">Phase 2 &middot; Months 3&ndash;4</p>
+          <h3>Full task management and voice-to-task</h3>
+          <p class="phase-job">Foreman runs the team's task list with the depth and views Heritage needs to manage every commitment from a single hub. Tom Sr.'s voice notes turn into assigned tasks on the right person's list.</p>
+          <ul>
+            <li>Tasks have an owner, a due date, a status (To Do, In Progress, Blocked, Done), a priority (Low, Normal, High, Urgent), and labels for filtering.</li>
+            <li>Sub-tasks split work into smaller pieces. Dependencies show which task blocks which.</li>
+            <li>Recurring tasks and templates: routine work (weekly check-ins, monthly reports) and repeating projects (partner onboarding) load with no manual setup.</li>
+            <li>Multiple views of the same tasks: list, board (Kanban), calendar, and timeline (Gantt). Each person works in the view that fits.</li>
+            <li>Comments and @mentions on every task. File attachments per task. Activity feed shows who did what and when, and serves as the audit trail.</li>
+            <li>Watchers stay informed without being assigned. Notifications via in-app, email, or MS Teams.</li>
+            <li>Auto-pings on delegated items past their reply window so manual chasing stays gone.</li>
+            <li>Monday rundown shown live with On Track, At Risk, Critical colors.</li>
+            <li>Tom Sr. records a voice note and Foreman creates or updates the corresponding tasks. Senior issues direction. Foreman puts it on the right person's list.</li>
+            <li>Voice-to-task respects existing engagement structure: tasks land in the right project with the right phase tagged and the right Point Person assigned.</li>
+            <li>Foreman confirms back to Tom Sr. by chat or voice with a list of what was created or updated, with sources.</li>
+          </ul>
+        </div>
 
-        <h3>3.3 &nbsp; Phase 2: Full task management (Months 3 to 4)</h3>
-        <p><strong>Job description.</strong> Foreman runs the team's task list with the depth and views Heritage needs to manage every commitment from a single hub.</p>
-        <ul>
-          <li>Tasks have an owner, a due date, a status (To Do, In Progress, Blocked, Done), a priority (Low, Normal, High, Urgent), and labels for filtering.</li>
-          <li>Sub-tasks split work into smaller pieces. Dependencies show which task blocks which.</li>
-          <li>Recurring tasks and templates: routine work (weekly check-ins, monthly reports) and repeating projects (partner onboarding) load with no manual setup.</li>
-          <li>Multiple views of the same tasks: list, board (Kanban), calendar, and timeline (Gantt). Each person works in the view that fits.</li>
-          <li>Comments and @mentions on every task. File attachments per task. Activity feed shows who did what and when, and serves as the audit trail.</li>
-          <li>Watchers stay informed without being assigned. Notifications via in-app, email, or MS Teams.</li>
-          <li>Auto-pings on delegated items past their reply window so manual chasing stays gone.</li>
-          <li>Monday rundown shown live with On Track, At Risk, Critical colors.</li>
-        </ul>
-
-        <h3>3.4 &nbsp; Phase 2: Voice-to-task for Tom Sr. (Months 3 to 4)</h3>
-        <ul>
-          <li>Tom Sr. records a voice note and Foreman creates or updates the corresponding tasks. Senior issues direction. Foreman puts it on the right person's list.</li>
-          <li>Voice-to-task respects existing engagement structure: tasks land in the right project with the right phase tagged and the right Point Person assigned.</li>
-          <li>Foreman confirms back to Tom Sr. by chat or voice with a list of what was created or updated, with sources.</li>
-        </ul>
-
-        <h3>3.5 &nbsp; Phase 3: Connectors (Months 5 to 6, menu-priced)</h3>
-        <p><strong>Job description.</strong> Foreman pulls signals from email, calls, Salesforce, and the client vault into one operating picture. Each connector is quoted separately.</p>
-        <ul>
-          <li>Salesforce sync: read and write of records, opportunities, and notes against the existing Heritage Salesforce instance.</li>
-          <li>Heritage AI client-vault linkage: Foreman reads the document checklist per client and surfaces gaps to the responsible Point Person.</li>
-          <li>Email scanning for client commitments: completion signals from email activity feed back into Foreman accountability layer.</li>
-          <li>Auto-drafted post-meeting letters into SharePoint, in Heritage voice, ready for Point Person sign-off.</li>
-          <li>Phone-call ingestion: Foreman captures inbound and outbound calls and turns key commitments into tasks.</li>
-        </ul>
+        <div class="phase-group">
+          <p class="phase-label">Phase 3 &middot; Months 5&ndash;6 &middot; menu-priced</p>
+          <h3>Connectors</h3>
+          <p class="phase-job">Foreman pulls signals from email, calls, Salesforce, and the client vault into one operating picture. Each connector is quoted separately.</p>
+          <ul>
+            <li>Salesforce sync: read and write of records, opportunities, and notes against the existing Heritage Salesforce instance.</li>
+            <li>Heritage AI client-vault linkage: Foreman reads the document checklist per client and surfaces gaps to the responsible Point Person.</li>
+            <li>Email scanning for client commitments: completion signals from email activity feed back into Foreman accountability layer.</li>
+            <li>Auto-drafted post-meeting letters into SharePoint, in Heritage voice, ready for Point Person sign-off.</li>
+            <li>Phone-call ingestion: Foreman captures inbound and outbound calls and turns key commitments into tasks.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
