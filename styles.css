@@ -573,3 +573,193 @@ td a, p a {
 td a:hover, p a:hover {
   border-bottom-color: var(--action);
 }
+
+/* ── Card pricing ─────────────────────────────────── */
+
+.card-price {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--fg-muted);
+}
+
+.card-price .price {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  color: var(--fg);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+  margin-right: 6px;
+}
+
+.card-price .price--tbd {
+  color: var(--fg-placeholder);
+  font-style: italic;
+}
+
+.index-card--static {
+  cursor: default;
+}
+
+.index-card--static:hover {
+  transform: none;
+  border-color: var(--border);
+}
+
+/* ── Timeline ─────────────────────────────────────── */
+
+.timeline-section {
+  padding: 80px 0 0;
+  border-top: 1px solid var(--border);
+  margin-top: 80px;
+  margin-bottom: 120px;
+}
+
+.timeline-section-header {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 64px;
+  margin-bottom: 48px;
+}
+
+.timeline-section-header .section-label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin: 0;
+  padding-top: 8px;
+}
+
+.timeline-section-header h2 {
+  font-size: 30px;
+  margin: 0 0 12px;
+}
+
+.timeline-section-header p {
+  color: var(--fg-muted);
+  margin: 0;
+  max-width: 580px;
+}
+
+@media (max-width: 720px) {
+  .timeline-section-header { grid-template-columns: 1fr; gap: 16px; }
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  column-gap: 32px;
+}
+
+.timeline-axis-spacer { display: block; }
+
+.timeline-axis {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.timeline-axis span {
+  padding-left: 8px;
+  border-left: 1px solid var(--border);
+}
+
+.timeline-axis span:first-child { border-left: none; padding-left: 0; }
+
+.timeline-info {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.timeline-info .kicker {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+  color: var(--fg-muted);
+}
+
+.timeline-info h3 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 6px;
+}
+
+.timeline-info h3 a {
+  color: inherit;
+  border-bottom: none;
+}
+
+.timeline-info h3 a:hover { color: var(--action); border-bottom: none; }
+
+.timeline-info .meta {
+  font-size: 12px;
+  color: var(--fg-muted);
+  margin: 0;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  letter-spacing: -0.01em;
+}
+
+.timeline-info .price-line {
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.timeline-info .price-line .price {
+  color: var(--fg);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.timeline-info .price-line .price--tbd { color: var(--fg-placeholder); font-style: italic; }
+
+.timeline-track {
+  position: relative;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.timeline-track::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: hsl(33 18% 90%);
+  transform: translateY(-50%);
+}
+
+.timeline-bar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--action);
+  min-width: 8px;
+}
+
+.timeline-bar--video { background: hsl(9 41% 55%); }
+.timeline-bar--training { background: hsl(64 13% 45%); }
+.timeline-bar--mrr { background: hsl(32 73% 60%); }
+.timeline-bar--build { background: var(--action); }
+
+@media (max-width: 720px) {
+  .timeline { grid-template-columns: 1fr; row-gap: 16px; }
+  .timeline-axis-spacer { display: none; }
+  .timeline-axis { font-size: 10px; }
+  .timeline-info { border-bottom: none; padding-bottom: 4px; }
+}
