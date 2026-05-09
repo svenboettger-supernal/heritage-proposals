@@ -584,6 +584,157 @@ td a:hover, p a:hover {
   border-color: var(--border);
 }
 
+/* ── Pricing summary table (index page) ───────────── */
+
+.pricing-section {
+  padding: 80px 0 0;
+  border-top: 1px solid var(--border);
+  margin-top: 16px;
+  margin-bottom: 120px;
+}
+
+.pricing-section-header {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 64px;
+  margin-bottom: 48px;
+}
+
+.pricing-section-header .section-label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin: 0;
+  padding-top: 8px;
+}
+
+.pricing-section-header h2 {
+  font-size: 30px;
+  margin: 0 0 12px;
+}
+
+.pricing-section-header p {
+  color: var(--fg-muted);
+  margin: 0;
+  max-width: 580px;
+}
+
+@media (max-width: 720px) {
+  .pricing-section-header { grid-template-columns: 1fr; gap: 16px; }
+}
+
+.pricing-table-wrap {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-card);
+  overflow: hidden;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.pricing-table thead th {
+  text-align: left;
+  padding: 16px 28px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  background: var(--bg-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.pricing-table thead th.pt-price {
+  text-align: right;
+  padding-right: 32px;
+}
+
+.pricing-table tbody td {
+  padding: 20px 28px;
+  border-bottom: 1px solid hsl(33 18% 92%);
+  vertical-align: top;
+}
+
+.pricing-table tbody tr:last-child td {
+  border-bottom: 1px solid var(--border);
+}
+
+.pricing-table .pt-item-name {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  color: var(--fg);
+}
+
+.pricing-table .pt-item-meta {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--fg-muted);
+  margin-top: 4px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pricing-table .pt-type {
+  color: var(--fg-muted);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+.pricing-table .pt-price {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--fg);
+  text-align: right;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  padding-right: 32px;
+}
+
+.pricing-table .pt-price-unit {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: var(--fg-muted);
+  margin-left: 4px;
+  letter-spacing: 0;
+}
+
+.pricing-table tfoot td {
+  padding: 18px 28px;
+  background: hsl(33 22% 96%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid hsl(33 18% 92%);
+}
+
+.pricing-table tfoot tr:last-child td {
+  border-bottom: none;
+}
+
+.pricing-table tfoot .pt-total-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.pricing-table tfoot .pt-price {
+  font-size: 17px;
+  font-weight: 600;
+}
+
 /* ── Pricing block (per SOW page) ─────────────────── */
 
 .pricing-card {
