@@ -431,7 +431,56 @@ hr {
 .index-list {
   display: grid;
   gap: 16px;
-  margin-top: 48px;
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
+.client-block {
+  padding: 80px 0 0;
+  margin-bottom: 24px;
+}
+
+.client-block:first-of-type { padding-top: 24px; }
+
+.client-block + .client-block { padding-top: 56px; }
+
+.client-block-header {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 64px;
+  margin-bottom: 32px;
+}
+
+.client-block-header .section-label {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin: 0;
+  padding-top: 8px;
+}
+
+.client-block-header h2 {
+  font-size: 30px;
+  margin: 0 0 12px;
+}
+
+.client-block-header p {
+  color: var(--fg-muted);
+  font-size: 16px;
+  margin: 0;
+  max-width: 580px;
+}
+
+@media (max-width: 720px) {
+  .client-block-header {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.client-block:last-of-type {
   margin-bottom: 120px;
 }
 
@@ -455,11 +504,72 @@ hr {
 .index-card .kicker { color: var(--action); margin-bottom: 12px; }
 
 .index-card h2 {
-  font-size: 28px;
+  font-size: 24px;
   margin: 0 0 8px;
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
 }
 
 .index-card p {
   color: var(--fg-muted);
   margin: 0;
+}
+
+/* ── Related SOWs (within a SOW page) ─────────────── */
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.related-card {
+  display: block;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 120ms ease, transform 120ms ease;
+}
+
+.related-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+.related-card .kicker {
+  color: var(--action);
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+
+.related-card h3 {
+  margin: 0 0 6px;
+  font-family: 'Lora', Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.related-card p {
+  color: var(--fg-muted);
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Inline SOW links inside body tables ─────────── */
+
+td a, p a {
+  color: var(--fg);
+  border-bottom-color: var(--border);
+}
+
+td a:hover, p a:hover {
+  border-bottom-color: var(--action);
 }

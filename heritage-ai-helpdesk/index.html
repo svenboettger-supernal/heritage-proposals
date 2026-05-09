@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Heritage AI · Help Desk AI Employee · Supernal SOW</title>
+<meta name="description" content="Statement of Work for the Help Desk AI Employee inside the Heritage AI platform.">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="container">
+  <header class="masthead">
+    <a class="brand" href="../" aria-label="Supernal"><img src="../assets/supernal-logo.svg" alt="Supernal"></a>
+    <div class="meta">
+      <span>Statement of Work for Heritage AI</span>
+    </div>
+  </header>
+
+  <a class="back-link" href="../"><span class="arrow">&larr;</span> All proposals</a>
+
+  <section class="hero">
+    <p class="kicker">For Heritage AI</p>
+    <h1>Help Desk AI Employee</h1>
+    <p class="lede">An in-app chat widget that handles inbound support across the Heritage AI platform: answers producer and firm-admin questions in-app, retrieves documents, opens tickets, and hands off cleanly to humans whenever judgment, advice, or platform engineering is required.</p>
+  </section>
+</div>
+
+<div class="container">
+
+  <section class="block">
+    <div class="section-grid">
+      <p class="section-label">01 / Overview</p>
+      <div class="section-body">
+        <h2>The brief</h2>
+        <p>The Help Desk AI Employee runs on doc-grounded retrieval with citations on every answer, archives every conversation for recordkeeping, and operates inside Heritage AI's compliance posture. The Heritage AI team approves voice and escalation rules. The Help Desk handles the rest.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-grid">
+      <p class="section-label">02 / Objectives</p>
+      <div class="section-body">
+        <h2>What success looks like</h2>
+        <ul>
+          <li>Resolve over 50% of partner-firm (L2&ndash;L5) support inbound without human involvement, cutting producer and admin time-to-answer from hours to seconds.</li>
+          <li>Let HNW end clients (L1) ask the AI for documents, book status, and scheduling.</li>
+          <li>Surface auditable citations on every response. No hallucinated facts reach users.</li>
+          <li>Take routine support questions off Heritage's employees and partner-firm directors.</li>
+          <li>Build one data layer and governance setup that serves both audiences.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-grid">
+      <p class="section-label">03 / Scope</p>
+      <div class="section-body">
+        <h2>Scope of work</h2>
+
+        <h3>3.1 &nbsp; Knowledge base and grounding</h3>
+        <ul>
+          <li>Curated knowledge base: module-level help docs, glossary, process docs.</li>
+          <li>Versioned RAG retrieval with visible citations on every answer.</li>
+          <li>Conflict detection, freshness SLAs, deprecation workflow.</li>
+          <li>Quote-grounded answering for high-stakes content (rates, deadlines, policy).</li>
+          <li>Single editorial owner per topic. Knowledge base treated as a product under ongoing development, not an artifact.</li>
+        </ul>
+
+        <h3>3.2 &nbsp; Agent, personas, and brand voice</h3>
+        <ul>
+          <li>Partner-firm help desk (L2&ndash;L5) answers platform questions directly and takes actions where permitted.</li>
+          <li>HNW end-client chat (L1) answers transactional questions only (documents, status, scheduling) and routes anything else to the client's advisor.</li>
+          <li>Per-persona writing rules: how the AI talks, what it avoids, and how its tone shifts by situation (warmer for complaints, neutral for compliance questions).</li>
+          <li>Recommended visible AI disclosure: "Hello, I'm Heritage's AI assistant&hellip;"</li>
+          <li>Banned-language list, formatting spec, signature.</li>
+          <li>5&ndash;20 example Q&amp;A pairs per persona, by Heritage, as the AI's reference for what good looks like.</li>
+        </ul>
+
+        <h3>3.3 &nbsp; Escalation and human-in-the-loop</h3>
+        <ul>
+          <li>Four escalation triggers: user asks for a human, AI is unsure, user is frustrated, topic requires a human.</li>
+          <li>Handoff to the human includes user identity, conversation summary, what the AI already tried, sentiment indicator, and a suggested next step. The human does not ask the user to repeat themselves.</li>
+          <li>Three rollout modes: shadow (AI drafts, human sends), co-pilot (AI suggests, human approves), autonomous-with-audit (AI sends, humans QA samples).</li>
+          <li>Real-time human override and takeover at any moment.</li>
+          <li>CS Manager workspace: a ticket inbox showing every open and recent ticket with status, assignee, priority, age, channel, and last AI response. Filters and saved views by team, persona, or topic. SLA timers per ticket. Bulk actions (close, reassign, tag). Ticket merge and split.</li>
+        </ul>
+
+        <h3>3.4 &nbsp; Data layer and integrations</h3>
+        <ul>
+          <li>Single database used by both the partner-firm and end-client AI: conversation transcripts, citations, action logs, sentiment scores, escalation history.</li>
+          <li>Heritage AI platform integration: read-only access to user and firm context, book status, document inventory.</li>
+          <li>Email notifications routed by topic to the right human owner.</li>
+          <li>Full audit trail: every conversation, draft, and action archived.</li>
+        </ul>
+
+        <h3>3.5 &nbsp; Compliance, security, and reporting</h3>
+        <ul>
+          <li>PII redaction in conversation logs before storage.</li>
+          <li>Conversation archive available for Heritage's compliance review.</li>
+          <li>Monthly performance report: usage volume, containment rate, escalation reasons, CSAT.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-grid">
+      <p class="section-label">04 / Out of scope</p>
+      <div class="section-body">
+        <h2>Out of scope and related SOWs</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Item</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="col-item">Email and voice channels</td><td class="col-meta">Not in scope (potential future add-on)</td></tr>
+              <tr><td class="col-item">Multi-language support</td><td class="col-meta">Not in scope (English only at launch)</td></tr>
+              <tr><td class="col-item">Personalized investment, tax, estate, or legal advice</td><td class="col-meta">Always handed off to a human director</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-grid">
+      <p class="section-label">05 / Timeline</p>
+      <div class="section-body">
+        <h2>Twelve weeks to autonomous</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Phase</th><th>Duration</th><th>Outcome</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="col-phase">Knowledge base curation and governance</td><td class="col-meta">Week 0&ndash;2</td><td>Knowledge base consolidated, conflict-detected, versioned. Freshness owners assigned.</td></tr>
+              <tr><td class="col-phase">Persona, voice, and escalation design</td><td class="col-meta">Week 2&ndash;4</td><td>Voice and tone rules locked. Escalation matrix approved.</td></tr>
+              <tr><td class="col-phase">Data layer and integrations build</td><td class="col-meta">Week 4&ndash;6</td><td>Database schema, platform read-only access, PM/CRM ticketing, audit pipeline live.</td></tr>
+              <tr><td class="col-phase">Agent build and shadow mode</td><td class="col-meta">Week 6&ndash;8</td><td>AI runs in shadow. Humans review and send all responses. Reference Q&amp;A bank built.</td></tr>
+              <tr><td class="col-phase">Co-pilot mode and tuning</td><td class="col-meta">Week 8&ndash;10</td><td>Humans approve. Prompt and knowledge base iteration on real data.</td></tr>
+              <tr><td class="col-phase">Production launch and hypercare</td><td class="col-meta">Week 10&ndash;12</td><td>Autonomous on transactional. Weekly QA and knowledge base updates.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-grid">
+      <p class="section-label">06 / Required inputs</p>
+      <div class="section-body">
+        <h2>What Heritage AI provides in week 0&ndash;2</h2>
+        <p>For the Help Desk AI Employee to start handling inbound on day one, Heritage AI provides the following in week 0&ndash;2. Approval delays extend cadence day-for-day. Several items may already exist within Supernal's stack from prior Heritage work. We will inventory what is reusable in week 0 and only ask Heritage AI to provide the gaps.</p>
+
+        <h3>6.1 &nbsp; Engagement and approvals</h3>
+        <ul>
+          <li>List of approvers with helpdesk authority.</li>
+          <li>Weekly 30-minute review call during build.</li>
+        </ul>
+
+        <h3>6.2 &nbsp; Knowledge base and content</h3>
+        <ul>
+          <li>Module-level help docs covering every feature live on the Heritage AI platform.</li>
+          <li>Glossary of estate-planning and Heritage-specific terms (approach book, asset sheets).</li>
+          <li>Process docs (book production, QA workflow, PDF delivery, end-client vault access).</li>
+          <li>5&ndash;20 example support Q&amp;A pairs per persona, hand-written by Heritage.</li>
+          <li>Banned-language list, tone preferences, and visible disclosure copy.</li>
+        </ul>
+
+        <h3>6.3 &nbsp; Escalation and routing</h3>
+        <ul>
+          <li>Routing matrix: who handles what.</li>
+          <li>Topic auto-escalation list.</li>
+          <li>Heritage AI employees' availability windows for live takeover.</li>
+          <li>After-hours escalation rules.</li>
+        </ul>
+
+        <h3>6.4 &nbsp; Operational and security access</h3>
+        <ul>
+          <li>Heritage AI platform read-only API access (user and firm context, book status, document inventory).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-grid">
+      <p class="section-label">Related</p>
+      <div class="section-body">
+        <h2>Other work in this partnership</h2>
+        <div class="related-grid">
+          <a class="related-card" href="../heritage-ai-website/">
+            <p class="kicker">For Heritage AI</p>
+            <h3>Front-End Website</h3>
+            <p>The marketing site that drives demos and pilots into the platform.</p>
+          </a>
+          <a class="related-card" href="../heritage-strategies-crm/">
+            <p class="kicker">For Heritage Strategies</p>
+            <h3>CRM AI Employee</h3>
+            <p>Surfaces tickets per customer with status and resolution history.</p>
+          </a>
+          <a class="related-card" href="../heritage-strategies-foreman/">
+            <p class="kicker">For Heritage Strategies</p>
+            <h3>Foreman AI Employee</h3>
+            <p>The internal workspace shared across CRM, Project Manager, and Help Desk.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    <span>Supernal &middot; AI Employees</span>
+    <span><a href="mailto:sven.boettger@getsupernal.ai">sven.boettger@getsupernal.ai</a></span>
+  </footer>
+
+</div>
+
+</body>
+</html>
