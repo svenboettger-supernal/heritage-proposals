@@ -432,6 +432,7 @@ hr {
   display: grid;
   gap: 16px;
   margin-top: 48px;
+  margin-bottom: 120px;
 }
 
 .index-card {
