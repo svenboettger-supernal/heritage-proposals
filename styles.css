@@ -814,7 +814,7 @@ td a:hover, p a:hover {
 
 /* Header row with quarter labels */
 .gantt-row--months {
-  grid-template-columns: 240px repeat(21, 1fr);
+  grid-template-columns: 240px repeat(24, 1fr);
   background: var(--bg-muted);
   border-bottom: 1px solid var(--border);
 }
@@ -848,7 +848,7 @@ td a:hover, p a:hover {
   left: 0;
   height: 100%;
   width: 100%;
-  grid-template-columns: 240px repeat(21, 1fr);
+  grid-template-columns: 240px repeat(24, 1fr);
   pointer-events: none;
   background: transparent;
   z-index: 0;
@@ -929,7 +929,7 @@ td a:hover, p a:hover {
 .gantt-row-bars {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(21, 1fr);
+  grid-template-columns: repeat(24, 1fr);
   align-items: center;
   margin: 0;
   padding: 0;
