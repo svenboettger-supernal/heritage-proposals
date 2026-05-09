@@ -767,16 +767,14 @@ td a:hover, p a:hover {
 
 .jd-modal-list li {
   counter-increment: jd-counter;
-  padding: 22px 0;
+  position: relative;
+  padding: 22px 0 22px 44px;
   border-top: 1px solid hsl(33 18% 92%);
-  display: grid;
-  grid-template-columns: 32px 1fr;
-  gap: 16px;
 }
 
 .jd-modal-list li:first-child {
   border-top: none;
-  padding-top: 0;
+  padding-top: 4px;
 }
 
 .jd-modal-list li:last-child {
@@ -785,12 +783,19 @@ td a:hover, p a:hover {
 
 .jd-modal-list li::before {
   content: counter(jd-counter);
+  position: absolute;
+  left: 0;
+  top: 22px;
+  width: 28px;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 14px;
   font-weight: 500;
   color: var(--fg-muted);
-  padding-top: 4px;
   letter-spacing: -0.02em;
+}
+
+.jd-modal-list li:first-child::before {
+  top: 4px;
 }
 
 .jd-modal-list .action {
@@ -805,8 +810,9 @@ td a:hover, p a:hover {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 12px;
   color: var(--fg-muted);
-  margin-top: 8px;
+  margin-top: 10px;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 @media (max-width: 600px) {
