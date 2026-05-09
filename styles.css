@@ -857,14 +857,22 @@ td a:hover, p a:hover {
 .gantt-track {
   position: relative;
   height: 72px;
-  background-image:
-    linear-gradient(to right, hsl(33 18% 82%) 1px, transparent 1px),
-    linear-gradient(to right, hsl(33 18% 92%) 1px, transparent 1px);
-  background-size:
-    calc(100% / 7) 100%,
-    calc(100% / 21) 100%;
-  background-repeat: repeat-x;
-  background-position: 0 0;
+}
+
+.gantt-track-grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(21, 1fr);
+  pointer-events: none;
+}
+
+.gantt-track-grid > div {
+  border-left: 1px solid hsl(33 18% 90%);
+}
+
+.gantt-track-grid > div:first-child {
+  border-left: none;
 }
 
 .gantt-row--axis .gantt-label {
@@ -874,13 +882,13 @@ td a:hover, p a:hover {
 .gantt-row--axis .gantt-track {
   height: auto;
   background: var(--bg-muted);
-  background-image: none;
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(21, 1fr);
   border-bottom: 1px solid var(--border);
 }
 
 .gantt-row--axis .gantt-track .quarter {
+  grid-column: span 3;
   font-family: 'Inter', sans-serif;
   font-size: 11px;
   font-weight: 600;
@@ -888,7 +896,7 @@ td a:hover, p a:hover {
   text-transform: uppercase;
   color: var(--fg-muted);
   padding: 16px 0 16px 12px;
-  border-left: 1px solid var(--border);
+  border-left: 1px solid hsl(33 18% 90%);
 }
 
 .gantt-row--axis .gantt-track .quarter:first-child {
@@ -905,47 +913,9 @@ td a:hover, p a:hover {
   background: hsl(196 13% 50%);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   transition: filter 120ms ease;
+  z-index: 1;
 }
 
-.gantt-row:hover .gantt-bar:not(.gantt-bar--training) {
+.gantt-row:hover .gantt-bar {
   filter: brightness(1.05);
 }
-
-.gantt-bar--video { background: hsl(9 41% 55%); }
-.gantt-bar--build { background: hsl(196 13% 50%); }
-.gantt-bar--mrr   { background: hsl(32 73% 69%); }
-
-.gantt-bar--training {
-  height: 4px;
-  border-radius: 2px;
-  background: hsl(64 13% 45%);
-  box-shadow: none;
-}
-
-.gantt-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
-  margin-top: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  color: var(--fg-muted);
-}
-
-.gantt-legend > div {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.gantt-legend .swatch {
-  display: inline-block;
-  width: 22px;
-  height: 10px;
-  border-radius: 9999px;
-}
-
-.gantt-legend .swatch--build    { background: hsl(196 13% 50%); }
-.gantt-legend .swatch--mrr      { background: hsl(32 73% 69%); }
-.gantt-legend .swatch--video    { background: hsl(9 41% 55%); }
-.gantt-legend .swatch--training { background: hsl(64 13% 45%); height: 3px; border-radius: 2px; }
