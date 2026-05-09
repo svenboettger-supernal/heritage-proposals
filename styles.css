@@ -764,3 +764,197 @@ td a:hover, p a:hover {
   .timeline-axis { font-size: 10px; }
   .timeline-info { border-bottom: none; padding-bottom: 4px; }
 }
+
+/* ── Gantt chart ──────────────────────────────────── */
+
+.gantt-wrap {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  overflow-x: auto;
+}
+
+.gantt {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  column-gap: 24px;
+  min-width: 880px;
+}
+
+.gantt-axis-spacer {
+  border-bottom: 1px solid var(--border);
+}
+
+.gantt-axis-row {
+  display: grid;
+  grid-template-columns: repeat(21, 1fr);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+  margin-bottom: 0;
+}
+
+.gantt-axis-row .quarter {
+  grid-column: span 3;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  border-left: 1px solid var(--border);
+  padding-left: 8px;
+}
+
+.gantt-axis-row .quarter:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.gantt-label {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gantt-label .kicker {
+  font-size: 11px;
+  color: var(--fg-muted);
+  margin-bottom: 6px;
+  letter-spacing: 0.1em;
+}
+
+.gantt-label h3 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 6px;
+  letter-spacing: -0.005em;
+}
+
+.gantt-label h3 a {
+  color: inherit;
+  border-bottom: none;
+}
+
+.gantt-label h3 a:hover { color: var(--action); border-bottom: none; }
+
+.gantt-label .meta {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  color: var(--fg-muted);
+  margin: 0 0 2px;
+  letter-spacing: -0.01em;
+}
+
+.gantt-label .price-line {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  color: var(--fg);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.gantt-label .price-line .price--tbd {
+  color: var(--fg-placeholder);
+  font-style: italic;
+}
+
+.gantt-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(21, 1fr);
+  align-items: center;
+  height: 64px;
+  border-bottom: 1px solid var(--border);
+  background-image:
+    linear-gradient(to right, hsl(33 18% 90%) 1px, transparent 1px);
+  background-size: calc(100% / 7) 100%;
+  background-position: 0 0;
+  background-repeat: repeat-x;
+}
+
+.gantt-bar {
+  height: 12px;
+  border-radius: 9999px;
+  margin: 0 1px;
+  background: hsl(196 13% 50%);
+  position: relative;
+  z-index: 1;
+}
+
+.gantt-bar--video    { background: hsl(9 41% 55%); }
+.gantt-bar--build    { background: hsl(196 13% 50%); }
+.gantt-bar--mrr      { background: hsl(32 73% 60%); }
+
+.gantt-tail {
+  height: 0;
+  align-self: center;
+  border-top: 2px dashed hsl(32 73% 60%);
+  margin: 0 1px;
+  position: relative;
+  z-index: 1;
+}
+
+.gantt-tail--training {
+  border-top-color: hsl(64 13% 45%);
+}
+
+.gantt-bar--training {
+  height: 4px;
+  background: hsl(64 13% 45%);
+  border-radius: 2px;
+}
+
+.gantt-bar-label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: calc(100% + 8px);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 10px;
+  color: var(--fg-muted);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.gantt-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--fg-muted);
+}
+
+.gantt-legend > div {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gantt-legend .swatch {
+  display: inline-block;
+  width: 18px;
+  height: 8px;
+  border-radius: 9999px;
+}
+
+.gantt-legend .swatch--build    { background: hsl(196 13% 50%); }
+.gantt-legend .swatch--mrr      { background: hsl(32 73% 60%); }
+.gantt-legend .swatch--video    { background: hsl(9 41% 55%); }
+.gantt-legend .swatch--training { background: hsl(64 13% 45%); height: 2px; }
+.gantt-legend .swatch--tail {
+  border-top: 2px dashed hsl(32 73% 60%);
+  height: 0;
+  width: 18px;
+}
+
+@media (max-width: 720px) {
+  .gantt-label {
+    border-bottom: none;
+    padding: 16px 0 4px;
+  }
+}
