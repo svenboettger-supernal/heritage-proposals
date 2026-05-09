@@ -814,9 +814,22 @@ td a:hover, p a:hover {
 
 /* Header row with quarter labels */
 .gantt-row--months {
-  grid-template-columns: 240px repeat(12, 1fr);
+  grid-template-columns: 240px repeat(13, 1fr);
   background: var(--bg-muted);
   border-bottom: 1px solid var(--border);
+}
+
+.gantt-row--months .future {
+  grid-column: span 1;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--fg-muted);
+  padding: 16px 0 16px 12px;
+  align-self: center;
+  border-left: 1px solid var(--border);
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .gantt-row--months .gantt-row-first {
@@ -848,7 +861,7 @@ td a:hover, p a:hover {
   left: 0;
   height: 100%;
   width: 100%;
-  grid-template-columns: 240px repeat(12, 1fr);
+  grid-template-columns: 240px repeat(13, 1fr);
   pointer-events: none;
   background: transparent;
   z-index: 0;
@@ -929,7 +942,7 @@ td a:hover, p a:hover {
 .gantt-row-bars {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(13, 1fr);
   align-items: center;
   margin: 0;
   padding: 0;
