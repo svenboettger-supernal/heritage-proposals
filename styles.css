@@ -575,30 +575,6 @@ td a:hover, p a:hover {
   border-bottom-color: var(--action);
 }
 
-/* ── Card pricing ─────────────────────────────────── */
-
-.card-price {
-  margin-top: 20px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
-  font-size: 13px;
-  color: var(--fg-muted);
-}
-
-.card-price .price {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  color: var(--fg);
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: -0.01em;
-  margin-right: 6px;
-}
-
-.card-price .price--tbd {
-  color: var(--fg-placeholder);
-  font-style: italic;
-}
-
 .index-card--static {
   cursor: default;
 }
@@ -606,6 +582,49 @@ td a:hover, p a:hover {
 .index-card--static:hover {
   transform: none;
   border-color: var(--border);
+}
+
+/* ── Pricing block (per SOW page) ─────────────────── */
+
+.pricing-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 36px 40px;
+  margin-top: 8px;
+  display: inline-block;
+  min-width: 320px;
+}
+
+.pricing-amount {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 38px;
+  font-weight: 500;
+  color: var(--fg);
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.pricing-amount .pricing-amount-meta {
+  font-size: 16px;
+  color: var(--fg-muted);
+  margin-left: 6px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.pricing-amount.pricing-amount--tbd {
+  color: var(--fg-placeholder);
+  font-style: italic;
+}
+
+.pricing-meta {
+  color: var(--fg-muted);
+  font-size: 14px;
+  margin: 0;
+  max-width: 460px;
+  line-height: 1.5;
 }
 
 /* ── Timeline ─────────────────────────────────────── */
@@ -768,67 +787,46 @@ td a:hover, p a:hover {
 /* ── Gantt chart ──────────────────────────────────── */
 
 .gantt-wrap {
-  margin-top: 32px;
-  margin-bottom: 32px;
+  margin-top: 24px;
+  margin-bottom: 16px;
   overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
 }
 
 .gantt {
+  min-width: 800px;
+}
+
+.gantt-row {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  column-gap: 24px;
-  min-width: 880px;
+  grid-template-columns: 220px 1fr;
 }
 
-.gantt-axis-spacer {
-  border-bottom: 1px solid var(--border);
-}
-
-.gantt-axis-row {
-  display: grid;
-  grid-template-columns: repeat(21, 1fr);
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 10px;
-  margin-bottom: 0;
-}
-
-.gantt-axis-row .quarter {
-  grid-column: span 3;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--fg-muted);
-  border-left: 1px solid var(--border);
-  padding-left: 8px;
-}
-
-.gantt-axis-row .quarter:first-child {
-  border-left: none;
-  padding-left: 0;
+.gantt-row + .gantt-row {
+  border-top: 1px solid var(--border);
 }
 
 .gantt-label {
-  padding: 18px 0;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 16px 20px 16px 24px;
+  border-right: 1px solid var(--border);
 }
 
 .gantt-label .kicker {
-  font-size: 11px;
-  color: var(--fg-muted);
-  margin-bottom: 6px;
+  font-size: 10px;
   letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin: 0 0 4px;
 }
 
 .gantt-label h3 {
   font-family: 'Lora', Georgia, serif;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   line-height: 1.25;
-  margin: 0 0 6px;
+  margin: 0 0 4px;
   letter-spacing: -0.005em;
 }
 
@@ -843,88 +841,79 @@ td a:hover, p a:hover {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 11px;
   color: var(--fg-muted);
-  margin: 0 0 2px;
-  letter-spacing: -0.01em;
-}
-
-.gantt-label .price-line {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 11px;
-  color: var(--fg);
   margin: 0;
   letter-spacing: -0.01em;
 }
 
-.gantt-label .price-line .price--tbd {
-  color: var(--fg-placeholder);
-  font-style: italic;
-}
-
 .gantt-track {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(21, 1fr);
-  align-items: center;
-  height: 64px;
-  border-bottom: 1px solid var(--border);
+  height: 56px;
   background-image:
-    linear-gradient(to right, hsl(33 18% 90%) 1px, transparent 1px);
+    linear-gradient(to right, hsl(33 18% 88%) 1px, transparent 1px);
   background-size: calc(100% / 7) 100%;
-  background-position: 0 0;
   background-repeat: repeat-x;
 }
 
+.gantt-row--axis .gantt-label {
+  background: var(--bg-muted);
+}
+
+.gantt-row--axis .gantt-track {
+  height: auto;
+  background: var(--bg-muted);
+  background-image: none;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid var(--border);
+}
+
+.gantt-row--axis .gantt-track .quarter {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  padding: 14px 0 14px 10px;
+  border-left: 1px solid var(--border);
+}
+
+.gantt-row--axis .gantt-track .quarter:first-child {
+  border-left: none;
+  padding-left: 16px;
+}
+
 .gantt-bar {
-  height: 12px;
-  border-radius: 9999px;
-  margin: 0 1px;
-  background: hsl(196 13% 50%);
-  position: relative;
-  z-index: 1;
-}
-
-.gantt-bar--video    { background: hsl(9 41% 55%); }
-.gantt-bar--build    { background: hsl(196 13% 50%); }
-.gantt-bar--mrr      { background: hsl(32 73% 60%); }
-
-.gantt-tail {
-  height: 0;
-  align-self: center;
-  border-top: 2px dashed hsl(32 73% 60%);
-  margin: 0 1px;
-  position: relative;
-  z-index: 1;
-}
-
-.gantt-tail--training {
-  border-top-color: hsl(64 13% 45%);
-}
-
-.gantt-bar--training {
-  height: 4px;
-  background: hsl(64 13% 45%);
-  border-radius: 2px;
-}
-
-.gantt-bar-label {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: calc(100% + 8px);
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 10px;
-  color: var(--fg-muted);
-  white-space: nowrap;
-  pointer-events: none;
+  height: 18px;
+  border-radius: 9px;
+  background: hsl(196 13% 50%);
+}
+
+.gantt-bar--video { background: hsl(9 41% 55%); }
+.gantt-bar--build { background: hsl(196 13% 50%); }
+.gantt-bar--mrr   { background: hsl(32 73% 60%); }
+
+.gantt-bar--training {
+  height: 6px;
+  border-radius: 3px;
+  background: hsl(64 13% 45%);
+}
+
+.gantt-tail {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 0;
+  border-top: 2px dashed hsl(32 73% 60%);
 }
 
 .gantt-legend {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  margin-top: 24px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border);
+  margin-top: 16px;
   font-size: 12px;
   color: var(--fg-muted);
 }
@@ -945,16 +934,10 @@ td a:hover, p a:hover {
 .gantt-legend .swatch--build    { background: hsl(196 13% 50%); }
 .gantt-legend .swatch--mrr      { background: hsl(32 73% 60%); }
 .gantt-legend .swatch--video    { background: hsl(9 41% 55%); }
-.gantt-legend .swatch--training { background: hsl(64 13% 45%); height: 2px; }
+.gantt-legend .swatch--training { background: hsl(64 13% 45%); height: 4px; border-radius: 2px; }
 .gantt-legend .swatch--tail {
   border-top: 2px dashed hsl(32 73% 60%);
   height: 0;
   width: 18px;
-}
-
-@media (max-width: 720px) {
-  .gantt-label {
-    border-bottom: none;
-    padding: 16px 0 4px;
-  }
+  background: transparent;
 }
