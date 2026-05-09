@@ -805,7 +805,7 @@ td a:hover, p a:hover {
 }
 
 .gantt-row + .gantt-row {
-  border-top: 1px solid hsl(33 18% 92%);
+  border-top: 1px solid hsl(33 18% 90%);
 }
 
 .gantt-row:hover:not(.gantt-row--axis) {
@@ -833,17 +833,29 @@ td a:hover, p a:hover {
 .gantt-label h3 a {
   color: inherit;
   border-bottom: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .gantt-label h3 a:hover { color: var(--action); border-bottom: none; }
 
-.gantt-label h3 .gantt-label-suffix {
-  font-family: 'Inter', sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-  color: var(--fg-muted);
-  letter-spacing: 0;
-  margin-left: 4px;
+.gantt-label h3 a::after {
+  content: "";
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23736b62' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 3h5v5'/%3E%3Cpath d='M9 3 3.5 8.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.65;
+  transition: opacity 120ms ease, transform 120ms ease;
+  margin-top: 1px;
+}
+
+.gantt-label h3 a:hover::after {
+  opacity: 1;
+  transform: translate(1px, -1px);
 }
 
 .gantt-label .meta {
