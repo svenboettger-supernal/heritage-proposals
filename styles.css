@@ -796,31 +796,90 @@ td a:hover, p a:hover {
 }
 
 .gantt {
+  display: grid;
+  position: relative;
   min-width: 880px;
 }
 
 .gantt-row {
   display: grid;
   grid-template-columns: 240px 1fr;
+  position: relative;
+  z-index: 1;
 }
 
-.gantt-row + .gantt-row {
+.gantt-row + .gantt-row:not(.gantt-row--lines) {
   border-top: 1px solid hsl(33 18% 90%);
 }
 
-.gantt-row:hover:not(.gantt-row--axis) {
-  background: hsl(33 22% 96%);
+/* Header row with quarter labels */
+.gantt-row--months {
+  grid-template-columns: 240px repeat(21, 1fr);
+  background: var(--bg-muted);
+  border-bottom: 1px solid var(--border);
 }
 
-.gantt-label {
-  padding: 20px 24px;
+.gantt-row--months .gantt-row-first {
+  background: var(--bg-muted);
+}
+
+.gantt-row--months .quarter {
+  grid-column: span 3;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  padding: 16px 0 16px 12px;
+  align-self: center;
+  border-left: 1px solid var(--border);
+}
+
+.gantt-row--months .quarter:first-of-type {
+  border-left: none;
+  padding-left: 20px;
+}
+
+/* Vertical-lines overlay (covers full chart) */
+.gantt-row--lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: 240px repeat(21, 1fr);
+  pointer-events: none;
+  background: transparent;
+  z-index: 0;
+  border: none;
+}
+
+.gantt-row--lines > .gantt-row-first {
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.gantt-row--lines > span {
+  border-right: 1px solid hsl(33 18% 90%);
+}
+
+.gantt-row--lines > span:last-child {
+  border-right: none;
+}
+
+/* Label cell (first column) */
+.gantt-row-first {
+  padding: 18px 24px;
   border-right: 1px solid var(--border);
+  background: var(--bg-card);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.gantt-label h3 {
+.gantt-row-first h3 {
   font-family: 'Lora', Georgia, serif;
   font-size: 18px;
   font-weight: 600;
@@ -830,7 +889,7 @@ td a:hover, p a:hover {
   color: var(--fg);
 }
 
-.gantt-label h3 a {
+.gantt-row-first h3 a {
   color: inherit;
   border-bottom: none;
   display: inline-flex;
@@ -838,9 +897,9 @@ td a:hover, p a:hover {
   gap: 6px;
 }
 
-.gantt-label h3 a:hover { color: var(--action); border-bottom: none; }
+.gantt-row-first h3 a:hover { color: var(--action); border-bottom: none; }
 
-.gantt-label h3 a::after {
+.gantt-row-first h3 a::after {
   content: "";
   display: inline-block;
   width: 11px;
@@ -853,12 +912,12 @@ td a:hover, p a:hover {
   margin-top: 1px;
 }
 
-.gantt-label h3 a:hover::after {
+.gantt-row-first h3 a:hover::after {
   opacity: 1;
   transform: translate(1px, -1px);
 }
 
-.gantt-label .meta {
+.gantt-row-first .meta {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-size: 11px;
   color: var(--fg-muted);
@@ -866,68 +925,28 @@ td a:hover, p a:hover {
   letter-spacing: -0.01em;
 }
 
-.gantt-track {
-  position: relative;
+/* Bars area (right column) */
+.gantt-row-bars {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(21, 1fr);
+  align-items: center;
+  margin: 0;
+  padding: 0;
   height: 72px;
+  background: transparent;
 }
 
-.gantt-track-grid {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: repeat(21, 1fr);
-  pointer-events: none;
-}
-
-.gantt-track-grid > div {
-  border-left: 1px solid hsl(33 18% 90%);
-}
-
-.gantt-track-grid > div:first-child {
-  border-left: none;
-}
-
-.gantt-row--axis .gantt-label {
-  background: var(--bg-muted);
-}
-
-.gantt-row--axis .gantt-track {
-  height: auto;
-  background: var(--bg-muted);
-  display: grid;
-  grid-template-columns: repeat(21, 1fr);
-  border-bottom: 1px solid var(--border);
-}
-
-.gantt-row--axis .gantt-track .quarter {
-  grid-column: span 3;
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--fg-muted);
-  padding: 16px 0 16px 12px;
-  border-left: 1px solid hsl(33 18% 90%);
-}
-
-.gantt-row--axis .gantt-track .quarter:first-child {
-  border-left: none;
-  padding-left: 20px;
-}
-
-.gantt-bar {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.gantt-row-bars li {
+  background: hsl(196 13% 50%);
   height: 22px;
   border-radius: 11px;
-  background: hsl(196 13% 50%);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  margin: 0 2px;
+  padding: 0;
+  list-style: none;
   transition: filter 120ms ease;
-  z-index: 1;
 }
 
-.gantt-row:hover .gantt-bar {
+.gantt-row:hover .gantt-row-bars li {
   filter: brightness(1.05);
 }
