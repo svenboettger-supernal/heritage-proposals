@@ -788,46 +788,46 @@ td a:hover, p a:hover {
 
 .gantt-wrap {
   margin-top: 24px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   overflow-x: auto;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 12px;
   background: var(--bg-card);
 }
 
 .gantt {
-  min-width: 800px;
+  min-width: 880px;
 }
 
 .gantt-row {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 240px 1fr;
 }
 
 .gantt-row + .gantt-row {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid hsl(33 18% 92%);
+}
+
+.gantt-row:hover:not(.gantt-row--axis) {
+  background: hsl(33 22% 96%);
 }
 
 .gantt-label {
-  padding: 16px 20px 16px 24px;
+  padding: 20px 24px;
   border-right: 1px solid var(--border);
-}
-
-.gantt-label .kicker {
-  font-size: 10px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--fg-muted);
-  margin: 0 0 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .gantt-label h3 {
   font-family: 'Lora', Georgia, serif;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.25;
-  margin: 0 0 4px;
+  margin: 0 0 6px;
   letter-spacing: -0.005em;
+  color: var(--fg);
 }
 
 .gantt-label h3 a {
@@ -836,6 +836,15 @@ td a:hover, p a:hover {
 }
 
 .gantt-label h3 a:hover { color: var(--action); border-bottom: none; }
+
+.gantt-label h3 .gantt-label-suffix {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--fg-muted);
+  letter-spacing: 0;
+  margin-left: 4px;
+}
 
 .gantt-label .meta {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
@@ -847,11 +856,15 @@ td a:hover, p a:hover {
 
 .gantt-track {
   position: relative;
-  height: 56px;
+  height: 72px;
   background-image:
-    linear-gradient(to right, hsl(33 18% 88%) 1px, transparent 1px);
-  background-size: calc(100% / 7) 100%;
+    linear-gradient(to right, hsl(33 18% 82%) 1px, transparent 1px),
+    linear-gradient(to right, hsl(33 18% 92%) 1px, transparent 1px);
+  background-size:
+    calc(100% / 7) 100%,
+    calc(100% / 21) 100%;
   background-repeat: repeat-x;
+  background-position: 0 0;
 }
 
 .gantt-row--axis .gantt-label {
@@ -868,52 +881,53 @@ td a:hover, p a:hover {
 }
 
 .gantt-row--axis .gantt-track .quarter {
+  font-family: 'Inter', sans-serif;
   font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--fg-muted);
-  padding: 14px 0 14px 10px;
+  padding: 16px 0 16px 12px;
   border-left: 1px solid var(--border);
 }
 
 .gantt-row--axis .gantt-track .quarter:first-child {
   border-left: none;
-  padding-left: 16px;
+  padding-left: 20px;
 }
 
 .gantt-bar {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  height: 18px;
-  border-radius: 9px;
+  height: 22px;
+  border-radius: 11px;
   background: hsl(196 13% 50%);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: filter 120ms ease;
+}
+
+.gantt-row:hover .gantt-bar:not(.gantt-bar--training) {
+  filter: brightness(1.05);
 }
 
 .gantt-bar--video { background: hsl(9 41% 55%); }
 .gantt-bar--build { background: hsl(196 13% 50%); }
-.gantt-bar--mrr   { background: hsl(32 73% 60%); }
+.gantt-bar--mrr   { background: hsl(32 73% 69%); }
 
 .gantt-bar--training {
-  height: 6px;
-  border-radius: 3px;
+  height: 4px;
+  border-radius: 2px;
   background: hsl(64 13% 45%);
-}
-
-.gantt-tail {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 0;
-  border-top: 2px dashed hsl(32 73% 60%);
+  box-shadow: none;
 }
 
 .gantt-legend {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
-  margin-top: 16px;
+  gap: 28px;
+  margin-top: 8px;
+  font-family: 'Inter', sans-serif;
   font-size: 12px;
   color: var(--fg-muted);
 }
@@ -921,23 +935,17 @@ td a:hover, p a:hover {
 .gantt-legend > div {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .gantt-legend .swatch {
   display: inline-block;
-  width: 18px;
-  height: 8px;
+  width: 22px;
+  height: 10px;
   border-radius: 9999px;
 }
 
 .gantt-legend .swatch--build    { background: hsl(196 13% 50%); }
-.gantt-legend .swatch--mrr      { background: hsl(32 73% 60%); }
+.gantt-legend .swatch--mrr      { background: hsl(32 73% 69%); }
 .gantt-legend .swatch--video    { background: hsl(9 41% 55%); }
-.gantt-legend .swatch--training { background: hsl(64 13% 45%); height: 4px; border-radius: 2px; }
-.gantt-legend .swatch--tail {
-  border-top: 2px dashed hsl(32 73% 60%);
-  height: 0;
-  width: 18px;
-  background: transparent;
-}
+.gantt-legend .swatch--training { background: hsl(64 13% 45%); height: 3px; border-radius: 2px; }
