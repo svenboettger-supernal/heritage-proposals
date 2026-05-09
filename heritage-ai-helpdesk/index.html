@@ -60,48 +60,54 @@
       <div class="section-body">
         <h2>Scope of work</h2>
 
-        <h3>3.1 &nbsp; Knowledge base and grounding</h3>
-        <ul>
-          <li>Curated knowledge base: module-level help docs, glossary, process docs.</li>
-          <li>Versioned RAG retrieval with visible citations on every answer.</li>
-          <li>Conflict detection, freshness SLAs, deprecation workflow.</li>
-          <li>Quote-grounded answering for high-stakes content (rates, deadlines, policy).</li>
-          <li>Single editorial owner per topic. Knowledge base treated as a product under ongoing development, not an artifact.</li>
-        </ul>
+        <div class="phase-group">
+          <p class="phase-label">Stage 1 &middot; Weeks 0&ndash;4</p>
+          <h3>Knowledge base, personas, and escalation design</h3>
+          <p class="phase-job">Lock the foundations Marshal will run on. The knowledge base is treated as a product, not an artifact. The personas and escalation rules are approved before any conversation goes live.</p>
+          <ul>
+            <li>Curated knowledge base: module-level help docs, glossary, process docs.</li>
+            <li>Versioned RAG retrieval with visible citations on every answer.</li>
+            <li>Conflict detection, freshness SLAs, deprecation workflow.</li>
+            <li>Quote-grounded answering for high-stakes content (rates, deadlines, policy).</li>
+            <li>Single editorial owner per topic.</li>
+            <li>Partner-firm help desk (L2&ndash;L5) answers platform questions directly and takes actions where permitted.</li>
+            <li>HNW end-client chat (L1) answers transactional questions only (documents, status, scheduling) and routes anything else to the client's advisor.</li>
+            <li>Per-persona writing rules: how the AI talks, what it avoids, and how its tone shifts by situation (warmer for complaints, neutral for compliance questions).</li>
+            <li>Recommended visible AI disclosure: "Hello, I'm Heritage's AI assistant&hellip;"</li>
+            <li>Banned-language list, formatting spec, signature.</li>
+            <li>5&ndash;20 example Q&amp;A pairs per persona, by Heritage, as the AI's reference for what good looks like.</li>
+            <li>Four escalation triggers: user asks for a human, AI is unsure, user is frustrated, topic requires a human.</li>
+            <li>Handoff to the human includes user identity, conversation summary, what the AI already tried, sentiment indicator, and a suggested next step.</li>
+            <li>Real-time human override and takeover at any moment.</li>
+            <li>CS Manager workspace: a ticket inbox showing every open and recent ticket with status, assignee, priority, age, channel, and last AI response. Filters and saved views by team, persona, or topic. SLA timers per ticket. Bulk actions (close, reassign, tag). Ticket merge and split.</li>
+          </ul>
+        </div>
 
-        <h3>3.2 &nbsp; Agent, personas, and brand voice</h3>
-        <ul>
-          <li>Partner-firm help desk (L2&ndash;L5) answers platform questions directly and takes actions where permitted.</li>
-          <li>HNW end-client chat (L1) answers transactional questions only (documents, status, scheduling) and routes anything else to the client's advisor.</li>
-          <li>Per-persona writing rules: how the AI talks, what it avoids, and how its tone shifts by situation (warmer for complaints, neutral for compliance questions).</li>
-          <li>Recommended visible AI disclosure: "Hello, I'm Heritage's AI assistant&hellip;"</li>
-          <li>Banned-language list, formatting spec, signature.</li>
-          <li>5&ndash;20 example Q&amp;A pairs per persona, by Heritage, as the AI's reference for what good looks like.</li>
-        </ul>
+        <div class="phase-group">
+          <p class="phase-label">Stage 2 &middot; Weeks 4&ndash;6</p>
+          <h3>Data layer, integrations, and compliance</h3>
+          <p class="phase-job">Single database serves both the partner-firm and end-client surfaces. Compliance posture (PII redaction, audit trail) is in place before any user sees a Marshal response.</p>
+          <ul>
+            <li>Single database used by both the partner-firm and end-client AI: conversation transcripts, citations, action logs, sentiment scores, escalation history.</li>
+            <li>Heritage AI platform integration: read-only access to user and firm context, book status, document inventory.</li>
+            <li>Email notifications routed by topic to the right human owner.</li>
+            <li>Full audit trail: every conversation, draft, and action archived.</li>
+            <li>PII redaction in conversation logs before storage.</li>
+            <li>Conversation archive available for Heritage's compliance review.</li>
+            <li>Monthly performance report: usage volume, containment rate, escalation reasons, CSAT.</li>
+          </ul>
+        </div>
 
-        <h3>3.3 &nbsp; Escalation and human-in-the-loop</h3>
-        <ul>
-          <li>Four escalation triggers: user asks for a human, AI is unsure, user is frustrated, topic requires a human.</li>
-          <li>Handoff to the human includes user identity, conversation summary, what the AI already tried, sentiment indicator, and a suggested next step. The human does not ask the user to repeat themselves.</li>
-          <li>Three rollout modes: shadow (AI drafts, human sends), co-pilot (AI suggests, human approves), autonomous-with-audit (AI sends, humans QA samples).</li>
-          <li>Real-time human override and takeover at any moment.</li>
-          <li>CS Manager workspace: a ticket inbox showing every open and recent ticket with status, assignee, priority, age, channel, and last AI response. Filters and saved views by team, persona, or topic. SLA timers per ticket. Bulk actions (close, reassign, tag). Ticket merge and split.</li>
-        </ul>
-
-        <h3>3.4 &nbsp; Data layer and integrations</h3>
-        <ul>
-          <li>Single database used by both the partner-firm and end-client AI: conversation transcripts, citations, action logs, sentiment scores, escalation history.</li>
-          <li>Heritage AI platform integration: read-only access to user and firm context, book status, document inventory.</li>
-          <li>Email notifications routed by topic to the right human owner.</li>
-          <li>Full audit trail: every conversation, draft, and action archived.</li>
-        </ul>
-
-        <h3>3.5 &nbsp; Compliance, security, and reporting</h3>
-        <ul>
-          <li>PII redaction in conversation logs before storage.</li>
-          <li>Conversation archive available for Heritage's compliance review.</li>
-          <li>Monthly performance report: usage volume, containment rate, escalation reasons, CSAT.</li>
-        </ul>
+        <div class="phase-group">
+          <p class="phase-label">Stage 3 &middot; Weeks 6&ndash;12</p>
+          <h3>Shadow mode, co-pilot mode, and autonomous launch</h3>
+          <p class="phase-job">Three rollout modes that progressively shift load from humans to Marshal. Heritage holds the brake until the data shows Marshal is ready for each step.</p>
+          <ul>
+            <li>Shadow mode (Weeks 6&ndash;8): AI drafts, humans send all responses. Reference Q&amp;A bank built from real traffic.</li>
+            <li>Co-pilot mode (Weeks 8&ndash;10): AI suggests, humans approve. Prompt and knowledge base iteration on real data.</li>
+            <li>Autonomous with audit (Weeks 10&ndash;12): AI sends on transactional topics, humans QA samples. Weekly QA and knowledge base updates.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

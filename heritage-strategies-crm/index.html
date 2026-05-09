@@ -61,48 +61,49 @@
       <div class="section-body">
         <h2>Scope of work</h2>
 
-        <h3>3.1 &nbsp; Stage 1: Single source of customer truth (Weeks 0&ndash;6)</h3>
-        <p><strong>Job description.</strong> Logs every prospect and client touch in one place. Answers questions by chat or voice. Frees the team from chasing email threads and spreadsheets.</p>
-        <ul>
-          <li>Inbound capture from Heritage Strategies and Heritage AI website forms, partner-firm referrals, EA inbox, and manual entry. Every capture creates a Prospect record with source, owner, and a confidence-scored profile enriched from public sources.</li>
-          <li>Email auto-logging through Outlook integration. Every email to or from a tracked stakeholder lands on the customer record with the next action flagged.</li>
-          <li>Per-customer view: stakeholder map, full timeline of meetings, emails, tasks, documents, and signed-off meeting letters. Deduplication runs against existing records before any new entry is created.</li>
-          <li>Conversational lookup by chat or voice with sourced answers. Sync layer reads from the existing Salesforce instance and active spreadsheets. No one has to migrate or change tools on day one.</li>
-        </ul>
+        <div class="phase-group">
+          <p class="phase-label">Stage 1 &middot; Weeks 0&ndash;6</p>
+          <h3>Single source of customer truth</h3>
+          <p class="phase-job">Logs every prospect and client touch in one place. Answers questions by chat or voice. Frees the team from chasing email threads and spreadsheets.</p>
+          <ul>
+            <li>Inbound capture from Heritage Strategies and Heritage AI website forms, partner-firm referrals, EA inbox, and manual entry. Every capture creates a Prospect record with source, owner, and a confidence-scored profile enriched from public sources.</li>
+            <li>Email auto-logging through Outlook integration. Every email to or from a tracked stakeholder lands on the customer record with the next action flagged.</li>
+            <li>Per-customer view: stakeholder map, full timeline of meetings, emails, tasks, documents, and signed-off meeting letters. Deduplication runs against existing records before any new entry is created.</li>
+            <li>Conversational lookup by chat or voice with sourced answers. Sync layer reads from the existing Salesforce instance and active spreadsheets. No one has to migrate or change tools on day one.</li>
+          </ul>
+        </div>
 
-        <h3>3.2 &nbsp; Stage 2: Account health and daily rundown (Weeks 6&ndash;10)</h3>
-        <p><strong>Job description.</strong> Tells the partners every morning who is on track, who is at risk, and what to do today. Drafts the messages that need to go out.</p>
-        <ul>
-          <li>Account health per Prospect and Customer: On Track, At Risk, or Critical. Each carries a plain-language reason: days in phase, overdue items, meeting cadence, or sentiment from notes.</li>
-          <li>Morning Digest of priorities and end-of-day digest of overdue items, sent to each Director and Point Person. Every item carries a next step, due date, and responsible party, in line with Heritage's communication standard.</li>
-          <li>Color-coded pipeline view (green, amber, red) with explicit reasons per account. The Monday rundown is built from these statuses so the meeting reviews exceptions, not the full list.</li>
-          <li>Revenue dashboard: pipeline value by phase, customer revenue by type, week-over-week delta, deal-velocity trend. Weekly opportunity digest covers warm prospects, expansion candidates, expiring documents, and dormant accounts to revive.</li>
-          <li>Outlook and email integration extends the Stage 1 logging into thread-level engagement signals: response latency, last reply, and re-engagement candidates feed the health score.</li>
-        </ul>
+        <div class="phase-group">
+          <p class="phase-label">Stage 2 &middot; Weeks 6&ndash;10</p>
+          <h3>Account health, daily rundown, and prepared outbound</h3>
+          <p class="phase-job">Tells the partners every morning who is on track, who is at risk, and what to do today. Drafts the messages that need to go out.</p>
+          <ul>
+            <li>Account health per Prospect and Customer: On Track, At Risk, or Critical. Each carries a plain-language reason: days in phase, overdue items, meeting cadence, or sentiment from notes.</li>
+            <li>Morning Digest of priorities and end-of-day digest of overdue items, sent to each Director and Point Person. Every item carries a next step, due date, and responsible party, in line with Heritage's communication standard.</li>
+            <li>Color-coded pipeline view (green, amber, red) with explicit reasons per account. The Monday rundown is built from these statuses so the meeting reviews exceptions, not the full list.</li>
+            <li>Revenue dashboard: pipeline value by phase, customer revenue by type, week-over-week delta, deal-velocity trend. Weekly opportunity digest covers warm prospects, expansion candidates, expiring documents, and dormant accounts to revive.</li>
+            <li>Outlook and email integration extends the Stage 1 logging into thread-level engagement signals: response latency, last reply, and re-engagement candidates feed the health score.</li>
+            <li>Outbound drafts (intro, follow-up, scope-of-work cover, meeting recap, NPS check-in) generated in Heritage voice. The Director approves before sending. Banned phrases and citation rules enforced from the locked style guide.</li>
+            <li>Pre-meeting prep summary delivered the day before: last interactions, open obligations, current scope-of-work state, recent vault changes. Materials ready before the meeting starts.</li>
+            <li>One-click meeting scheduling with calendar-aware proposed times. The EA confirms. The AI never books an HNW principal autonomously.</li>
+            <li>Stakeholder map per customer (principals, spouse, attorneys, accountants, partner advisors) populated from logged emails and meeting letters, with role, contact details, and last interaction.</li>
+          </ul>
+        </div>
 
-        <h3>3.3 &nbsp; Stage 2: Prepared outbound and pre-meeting support (Weeks 6&ndash;10)</h3>
-        <ul>
-          <li>Outbound drafts (intro, follow-up, scope-of-work cover, meeting recap, NPS check-in) generated in Heritage voice. The Director approves before sending. Banned phrases and citation rules enforced from the locked style guide.</li>
-          <li>Pre-meeting prep summary delivered the day before: last interactions, open obligations, current scope-of-work state, recent vault changes. Materials ready before the meeting starts.</li>
-          <li>One-click meeting scheduling with calendar-aware proposed times. The EA confirms. The AI never books an HNW principal autonomously.</li>
-          <li>Stakeholder map per customer (principals, spouse, attorneys, accountants, partner advisors) populated from logged emails and meeting letters, with role, contact details, and last interaction.</li>
-        </ul>
-
-        <h3>3.4 &nbsp; Stage 3: Phase engine and protocol cadence (Weeks 10&ndash;14)</h3>
-        <p><strong>Job description.</strong> Runs Heritage's prep protocol on cadence and progresses every relationship to its next defined step. Owns the path from prospect to active customer to growth.</p>
-        <ul>
-          <li>Prospect phases (Approach, Phase 1, Phase 2, Phase 3) and customer phases (Active, Growth, Steady-State, Dormant). Entry and exit criteria configurable per phase. The AI proposes progression when criteria are met. The named owner confirms.</li>
-          <li>Auto-instantiated checklists on phase entry. Example: an Approach phase generates tasks to obtain a biography, add the prospect to the tracker, and schedule discovery. Tasks land in the Foreman workspace so Directors work in one place.</li>
-          <li>Prep protocol cadence: Pre-Internal, IR1, IR2, Partner Review, Client Meeting tracked per engagement. Slippage flagged with named owner and date before it reaches the partners.</li>
-          <li>After each client meeting, the signed-off meeting letter is the source of truth for what was agreed. Each action item becomes a task with owner and due date in the shared Foreman workspace.</li>
-        </ul>
-
-        <h3>3.5 &nbsp; Stage 3: Unified platform and integrations (Weeks 10&ndash;14)</h3>
-        <ul>
-          <li>Top-left environment switcher between CRM, Foreman, and Help Desk. Single sign-on. Single notification surface. Shared data layer for Tasks, Meetings, Documents, and Stakeholders modeled once.</li>
-          <li>Heritage AI platform integration. Book-production status visible per customer. Document inventory linked to tasks.</li>
-          <li>Help Desk integration. Tickets surfaced per customer with status and resolution history.</li>
-        </ul>
+        <div class="phase-group">
+          <p class="phase-label">Stage 3 &middot; Weeks 10&ndash;14</p>
+          <h3>Phase engine, protocol cadence, and unified platform</h3>
+          <p class="phase-job">Runs Heritage's prep protocol on cadence and progresses every relationship to its next defined step. Owns the path from prospect to active customer to growth, on one shared data layer with Foreman and Marshal.</p>
+          <ul>
+            <li>Prospect phases (Approach, Phase 1, Phase 2, Phase 3) and customer phases (Active, Growth, Steady-State, Dormant). Entry and exit criteria configurable per phase. The AI proposes progression when criteria are met. The named owner confirms.</li>
+            <li>Auto-instantiated checklists on phase entry. Example: an Approach phase generates tasks to obtain a biography, add the prospect to the tracker, and schedule discovery. Tasks land in the Foreman workspace so Directors work in one place.</li>
+            <li>Prep protocol cadence: Pre-Internal, IR1, IR2, Partner Review, Client Meeting tracked per engagement. Slippage flagged with named owner and date before it reaches the partners.</li>
+            <li>After each client meeting, the signed-off meeting letter is the source of truth for what was agreed. Each action item becomes a task with owner and due date in the shared Foreman workspace.</li>
+            <li>Top-left environment switcher between CRM, Foreman, and Help Desk. Single sign-on. Single notification surface. Shared data layer for Tasks, Meetings, Documents, and Stakeholders modeled once.</li>
+            <li>Heritage AI platform integration. Book-production status visible per customer. Document inventory linked to tasks.</li>
+            <li>Help Desk integration. Tickets surfaced per customer with status and resolution history.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
