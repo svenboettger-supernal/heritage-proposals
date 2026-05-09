@@ -22,20 +22,19 @@
   <div class="hero-grid">
     <section class="hero">
       <p class="kicker">Help Desk AI Employee &middot; Heritage AI</p>
-      <h1>Marshal</h1>
+      <h1>Sam</h1>
       <p class="lede">An in-app chat widget that handles inbound support across the Heritage AI platform: answers producer and firm-admin questions in-app, retrieves documents, opens tickets, and hands off cleanly to humans whenever judgment, advice, or platform engineering is required.</p>
     </section>
 
-    <aside class="tom-jd">
-      <p class="tom-jd-kicker">For Tom Sr.</p>
-      <h2>5 things you can do with Marshal</h2>
-      <ol>
-        <li>Take over any conversation in real time when judgment is needed.<span class="when">Stage 1 &middot; Weeks 0&ndash;4</span></li>
-        <li>Approve adding new help topics or escalation paths.<span class="when">Stage 1 &middot; Weeks 0&ndash;4</span></li>
-        <li>Pull a conversation archive for a compliance review.<span class="when">Stage 2 &middot; Weeks 4&ndash;6</span></li>
-        <li>Read the monthly performance report: containment, escalations, CSAT.<span class="when">Stage 3 &middot; Weeks 10&ndash;12</span></li>
-        <li>See sentiment trends across partner firms by month.<span class="when">Stage 3 &middot; Week 10+</span></li>
-      </ol>
+    <aside class="jd-aside">
+      <button class="jd-button" type="button" data-jd-open="jd-modal">
+        <span class="jd-button-eyebrow">For Tom Sr.</span>
+        <span class="jd-button-title">Job Description</span>
+        <span class="jd-button-foot">
+          <span>5 ways your life gets easier</span>
+          <span class="jd-button-arrow">&rarr;</span>
+        </span>
+      </button>
     </aside>
   </div>
 </div>
@@ -77,7 +76,7 @@
         <div class="phase-group">
           <p class="phase-label">Stage 1 &middot; Weeks 0&ndash;4</p>
           <h3>Knowledge base, personas, and escalation design</h3>
-          <p class="phase-job">Lock the foundations Marshal will run on. The knowledge base is treated as a product, not an artifact. The personas and escalation rules are approved before any conversation goes live.</p>
+          <p class="phase-job">Lock the foundations Sam will run on. The knowledge base is treated as a product, not an artifact. The personas and escalation rules are approved before any conversation goes live.</p>
           <ul>
             <li>Curated knowledge base: module-level help docs, glossary, process docs.</li>
             <li>Versioned RAG retrieval with visible citations on every answer.</li>
@@ -100,7 +99,7 @@
         <div class="phase-group">
           <p class="phase-label">Stage 2 &middot; Weeks 4&ndash;6</p>
           <h3>Data layer, integrations, and compliance</h3>
-          <p class="phase-job">Single database serves both the partner-firm and end-client surfaces. Compliance posture (PII redaction, audit trail) is in place before any user sees a Marshal response.</p>
+          <p class="phase-job">Single database serves both the partner-firm and end-client surfaces. Compliance posture (PII redaction, audit trail) is in place before any user sees a Sam response.</p>
           <ul>
             <li>Single database used by both the partner-firm and end-client AI: conversation transcripts, citations, action logs, sentiment scores, escalation history.</li>
             <li>Heritage AI platform integration: read-only access to user and firm context, book status, document inventory.</li>
@@ -115,7 +114,7 @@
         <div class="phase-group">
           <p class="phase-label">Stage 3 &middot; Weeks 6&ndash;12</p>
           <h3>Shadow mode, co-pilot mode, and autonomous launch</h3>
-          <p class="phase-job">Three rollout modes that progressively shift load from humans to Marshal. Heritage holds the brake until the data shows Marshal is ready for each step.</p>
+          <p class="phase-job">Three rollout modes that progressively shift load from humans to Sam. Heritage holds the brake until the data shows Sam is ready for each step.</p>
           <ul>
             <li>Shadow mode (Weeks 6&ndash;8): AI drafts, humans send all responses. Reference Q&amp;A bank built from real traffic.</li>
             <li>Co-pilot mode (Weeks 8&ndash;10): AI suggests, humans approve. Prompt and knowledge base iteration on real data.</li>
@@ -226,6 +225,40 @@
   </footer>
 
 </div>
+
+<div class="jd-modal" id="jd-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="jd-modal-title">
+  <div class="jd-modal-backdrop" data-jd-close></div>
+  <div class="jd-modal-content">
+    <button class="jd-modal-close" type="button" aria-label="Close" data-jd-close>&times;</button>
+    <p class="jd-modal-eyebrow">For Tom Sr.</p>
+    <h2 id="jd-modal-title">Sam &middot; Job Description</h2>
+    <p class="jd-modal-subtitle">5 ways your life gets easier with Sam.</p>
+    <ol class="jd-modal-list">
+      <li>
+        <span class="action">Producer firms stop calling you with the easy questions. Sam handles tier-1 &mdash; only the hard ones reach you.</span>
+        <span class="when">Mar 2027</span>
+      </li>
+      <li>
+        <span class="action">HNW end-clients ask Sam where their book is at 11&nbsp;PM. Sam answers. You don't get a call.</span>
+        <span class="when">Mar 2027</span>
+      </li>
+      <li>
+        <span class="action">Take over any chat in real time when a situation needs the senior partner.</span>
+        <span class="when">Feb 2027</span>
+      </li>
+      <li>
+        <span class="action">Pull a conversation archive in one click for a compliance review.</span>
+        <span class="when">Feb 2027</span>
+      </li>
+      <li>
+        <span class="action">Read the monthly performance report: containment rate, escalations, satisfaction.</span>
+        <span class="when">From Apr 2027</span>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<script src="../app.js" defer></script>
 
 </body>
 </html>

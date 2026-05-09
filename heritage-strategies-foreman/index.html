@@ -26,16 +26,15 @@
       <p class="lede">Heritage's shared workspace for everything in flight. Every client engagement, every internal project, every meeting, and every action item lives in one place. One owner, one due date, one status per task, in line with the Heritage no-dates standard.</p>
     </section>
 
-    <aside class="tom-jd">
-      <p class="tom-jd-kicker">For Tom Sr.</p>
-      <h2>5 things you can do with Foreman</h2>
-      <ol>
-        <li>Ask "where are we on the Karol case" by chat or voice. Sourced answer in seconds.<span class="when">Phase 1 &middot; Months 1&ndash;2</span></li>
-        <li>Read your morning digest before the partners' meeting.<span class="when">Phase 1 &middot; Months 1&ndash;2</span></li>
-        <li>See the Monday rundown live in green / amber / red.<span class="when">Phase 1 &middot; Months 1&ndash;2</span></li>
-        <li>Record a voice note. Foreman turns it into assigned tasks on the right person's list.<span class="when">Phase 2 &middot; Months 3&ndash;4</span></li>
-        <li>Get a private end-of-day digest of what's overdue and what needs a new commitment.<span class="when">Phase 1 &middot; Months 1&ndash;2</span></li>
-      </ol>
+    <aside class="jd-aside">
+      <button class="jd-button" type="button" data-jd-open="jd-modal">
+        <span class="jd-button-eyebrow">For Tom Sr.</span>
+        <span class="jd-button-title">Job Description</span>
+        <span class="jd-button-foot">
+          <span>5 ways your life gets easier</span>
+          <span class="jd-button-arrow">&rarr;</span>
+        </span>
+      </button>
     </aside>
   </div>
 </div>
@@ -258,6 +257,40 @@
   </footer>
 
 </div>
+
+<div class="jd-modal" id="jd-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="jd-modal-title">
+  <div class="jd-modal-backdrop" data-jd-close></div>
+  <div class="jd-modal-content">
+    <button class="jd-modal-close" type="button" aria-label="Close" data-jd-close>&times;</button>
+    <p class="jd-modal-eyebrow">For Tom Sr.</p>
+    <h2 id="jd-modal-title">Foreman &middot; Job Description</h2>
+    <p class="jd-modal-subtitle">5 ways your life gets easier with Foreman.</p>
+    <ol class="jd-modal-list">
+      <li>
+        <span class="action">Ask any client status by voice &mdash; the same way you ask Safari today. "Where are we on the Karol case?" Sourced answer in seconds.</span>
+        <span class="when">Aug 2026</span>
+      </li>
+      <li>
+        <span class="action">The Monday meeting opens with a clean rundown on a screen, not printed dittos. Green / amber / red, every line with a reason.</span>
+        <span class="when">Aug 2026</span>
+      </li>
+      <li>
+        <span class="action">Stop phone-hunting when something is wrong. Read the end-of-day digest of what slipped &mdash; Foreman already chased the team.</span>
+        <span class="when">Aug 2026</span>
+      </li>
+      <li>
+        <span class="action">Record a voice note. Foreman turns it into assigned tasks and pings the right person. Senior's direction syndicates without you on the phone.</span>
+        <span class="when">Oct 2026</span>
+      </li>
+      <li>
+        <span class="action">In your next board meeting, ask Foreman a question on speakerphone. That's what an AI-native firm sounds like.</span>
+        <span class="when">From Aug 2026</span>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<script src="../app.js" defer></script>
 
 </body>
 </html>

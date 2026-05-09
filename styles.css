@@ -584,6 +584,237 @@ td a:hover, p a:hover {
   border-color: var(--border);
 }
 
+/* ── Hero + JD button (opens modal) ───────────────── */
+
+.jd-aside {
+  margin-top: 24px;
+}
+
+.jd-button {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 24px 28px 22px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background-color 140ms ease, border-color 140ms ease, transform 140ms ease, box-shadow 140ms ease;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.03);
+}
+
+.jd-button:hover {
+  background: hsl(33 22% 96%);
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px -10px rgba(0, 0, 0, 0.2);
+}
+
+.jd-button:focus-visible {
+  outline: 2px solid var(--action);
+  outline-offset: 3px;
+}
+
+.jd-button .jd-button-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  font-weight: 600;
+}
+
+.jd-button .jd-button-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.2;
+  color: var(--fg);
+}
+
+.jd-button .jd-button-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+  padding-top: 14px;
+  border-top: 1px solid hsl(33 18% 92%);
+  font-size: 13px;
+  color: var(--fg-muted);
+  letter-spacing: 0.01em;
+}
+
+.jd-button .jd-button-arrow {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: var(--fg-muted);
+  transition: transform 140ms ease, color 140ms ease;
+}
+
+.jd-button:hover .jd-button-arrow {
+  transform: translateX(2px);
+  color: var(--fg);
+}
+
+/* ── Modal ───────────────────────────────────────── */
+
+.jd-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.jd-modal[aria-hidden="false"] {
+  display: flex;
+  animation: jd-fade 180ms ease-out;
+}
+
+@keyframes jd-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.jd-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 18, 16, 0.7);
+  cursor: pointer;
+}
+
+.jd-modal-content {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 56px 56px 48px;
+  max-width: 620px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.45), 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  animation: jd-slide 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes jd-slide {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.jd-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  color: var(--fg-muted);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.jd-modal-close:hover {
+  background: var(--bg-muted);
+  color: var(--fg);
+}
+
+.jd-modal-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.jd-modal h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 6px;
+}
+
+.jd-modal-subtitle {
+  color: var(--fg-muted);
+  font-size: 15px;
+  margin: 0 0 32px;
+  line-height: 1.5;
+}
+
+.jd-modal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: jd-counter;
+}
+
+.jd-modal-list li {
+  counter-increment: jd-counter;
+  padding: 22px 0;
+  border-top: 1px solid hsl(33 18% 92%);
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 16px;
+}
+
+.jd-modal-list li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.jd-modal-list li:last-child {
+  padding-bottom: 0;
+}
+
+.jd-modal-list li::before {
+  content: counter(jd-counter);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--fg-muted);
+  padding-top: 4px;
+  letter-spacing: -0.02em;
+}
+
+.jd-modal-list .action {
+  display: block;
+  font-size: 15.5px;
+  line-height: 1.55;
+  color: var(--fg);
+}
+
+.jd-modal-list .when {
+  display: block;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--fg-muted);
+  margin-top: 8px;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 600px) {
+  .jd-modal { padding: 16px; }
+  .jd-modal-content { padding: 40px 28px 32px; }
+  .jd-modal h2 { font-size: 24px; }
+}
+
 /* ── Hero + JD card layout ────────────────────────── */
 
 .hero-grid {

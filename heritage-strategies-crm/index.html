@@ -22,20 +22,19 @@
   <div class="hero-grid">
     <section class="hero">
       <p class="kicker">CRM AI Employee &middot; Sales &middot; Heritage Strategies</p>
-      <h1>Wrangler</h1>
-      <p class="lede">Wrangler is Heritage's sales-side AI Employee. It is the single source of truth for every prospect and client, captures inbound leads, logs every email and meeting on the customer record, and answers questions by chat or voice. Wrangler is sales only. Marketing content lives with Press; client support lives with Marshal.</p>
+      <h1>Hank</h1>
+      <p class="lede">Hank is Heritage's sales-side AI Employee. It is the single source of truth for every prospect and client, captures inbound leads, logs every email and meeting on the customer record, and answers questions by chat or voice. Hank is sales only. Marketing content lives with Stephen; client support lives with Sam.</p>
     </section>
 
-    <aside class="tom-jd">
-      <p class="tom-jd-kicker">For Tom Sr.</p>
-      <h2>5 things you can do with Wrangler</h2>
-      <ol>
-        <li>Ask "what's open on the Karol case" or any other prospect by chat or voice.<span class="when">Stage 1 &middot; Weeks 0&ndash;6</span></li>
-        <li>Approve a Director's outbound draft in under five minutes from your inbox.<span class="when">Stage 2 &middot; Weeks 6&ndash;10</span></li>
-        <li>Read your morning pipeline digest with a one-line reason per account.<span class="when">Stage 2 &middot; Weeks 6&ndash;10</span></li>
-        <li>Get a one-page prep summary the day before any client meeting.<span class="when">Stage 2 &middot; Weeks 6&ndash;10</span></li>
-        <li>See which prospects are at risk and why, before the next Monday meeting.<span class="when">Stage 2 &middot; Weeks 6&ndash;10</span></li>
-      </ol>
+    <aside class="jd-aside">
+      <button class="jd-button" type="button" data-jd-open="jd-modal">
+        <span class="jd-button-eyebrow">For Tom Sr.</span>
+        <span class="jd-button-title">Job Description</span>
+        <span class="jd-button-foot">
+          <span>5 ways your life gets easier</span>
+          <span class="jd-button-arrow">&rarr;</span>
+        </span>
+      </button>
     </aside>
   </div>
 </div>
@@ -107,7 +106,7 @@
         <div class="phase-group">
           <p class="phase-label">Stage 3 &middot; Weeks 10&ndash;14</p>
           <h3>Phase engine, protocol cadence, and unified platform</h3>
-          <p class="phase-job">Runs Heritage's prep protocol on cadence and progresses every relationship to its next defined step. Owns the path from prospect to active customer to growth, on one shared data layer with Foreman and Marshal.</p>
+          <p class="phase-job">Runs Heritage's prep protocol on cadence and progresses every relationship to its next defined step. Owns the path from prospect to active customer to growth, on one shared data layer with Foreman and Sam.</p>
           <ul>
             <li>Prospect phases (Approach, Phase 1, Phase 2, Phase 3) and customer phases (Active, Growth, Steady-State, Dormant). Entry and exit criteria configurable per phase. The AI proposes progression when criteria are met. The named owner confirms.</li>
             <li>Auto-instantiated checklists on phase entry. Example: an Approach phase generates tasks to obtain a biography, add the prospect to the tracker, and schedule discovery. Tasks land in the Foreman workspace so Directors work in one place.</li>
@@ -223,6 +222,40 @@
   </footer>
 
 </div>
+
+<div class="jd-modal" id="jd-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="jd-modal-title">
+  <div class="jd-modal-backdrop" data-jd-close></div>
+  <div class="jd-modal-content">
+    <button class="jd-modal-close" type="button" aria-label="Close" data-jd-close>&times;</button>
+    <p class="jd-modal-eyebrow">For Tom Sr.</p>
+    <h2 id="jd-modal-title">Hank &middot; Job Description</h2>
+    <p class="jd-modal-subtitle">5 ways your life gets easier with Hank.</p>
+    <ol class="jd-modal-list">
+      <li>
+        <span class="action">Ask "what's open on Karol" by voice. Hank knows every email and meeting on the record &mdash; Jess doesn't have to remember anymore.</span>
+        <span class="when">Nov 2026</span>
+      </li>
+      <li>
+        <span class="action">Read the morning pipeline digest before the partners' meeting. Five clients in motion, one-line reason per line.</span>
+        <span class="when">Dec 2026</span>
+      </li>
+      <li>
+        <span class="action">Approve a Director's outbound from your phone in five minutes. No drafts go out without your eye.</span>
+        <span class="when">Dec 2026</span>
+      </li>
+      <li>
+        <span class="action">Walk into any client meeting with a one-page prep summary, delivered the day before. Last interactions, open obligations, recent vault changes.</span>
+        <span class="when">Dec 2026</span>
+      </li>
+      <li>
+        <span class="action">See which prospects are at risk on Sunday night, before Monday's meeting puts you on the spot.</span>
+        <span class="when">Dec 2026</span>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<script src="../app.js" defer></script>
 
 </body>
 </html>
