@@ -1268,7 +1268,6 @@ html.locked .proposal-gate {
   font-weight: 500;
   color: var(--fg);
   letter-spacing: 0.04em;
-  text-transform: uppercase;
 }
 
 .pricing-table tfoot .pt-price {
