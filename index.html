@@ -142,6 +142,10 @@
           <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
 
+        <div class="gantt-today" id="gantt-today" aria-hidden="true">
+          <span class="gantt-today-pill">May 2026</span>
+        </div>
+
         <div class="gantt-row">
           <div class="gantt-row-first">
             <h3><a href="brand-video/">Brand Video Bundle</a></h3>
@@ -328,6 +332,25 @@
   </footer>
 
 </div>
+
+<script>
+(function () {
+  var todayEl = document.getElementById('gantt-today');
+  if (!todayEl) return;
+  var today = new Date();
+  var startYear = 2026, startMonth = 3; // April 2026 (0-indexed)
+  var totalCells = 13; // 12 months + future cell
+  var monthsFromStart = (today.getFullYear() - startYear) * 12 + (today.getMonth() - startMonth);
+  var daysInMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
+  var monthFraction = monthsFromStart + (today.getDate() - 1) / daysInMonth;
+  if (monthFraction < 0 || monthFraction >= totalCells) { todayEl.style.display = 'none'; return; }
+  var fraction = monthFraction / totalCells;
+  todayEl.style.left = 'calc(240px + (100% - 240px) * ' + fraction.toFixed(4) + ')';
+  var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  var pill = todayEl.querySelector('.gantt-today-pill');
+  if (pill) pill.textContent = months[today.getMonth()] + ' ' + today.getFullYear();
+})();
+</script>
 
 </body>
 </html>
