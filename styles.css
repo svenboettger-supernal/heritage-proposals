@@ -584,6 +584,130 @@ td a:hover, p a:hover {
   border-color: var(--border);
 }
 
+/* ── Password gate ────────────────────────────────── */
+
+.proposal-gate { display: none; }
+
+html.locked body > *:not(.proposal-gate):not(script) {
+  display: none !important;
+}
+
+html.locked .proposal-gate {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  background: var(--bg-page);
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  z-index: 99999;
+}
+
+.proposal-gate-card {
+  width: 100%;
+  max-width: 360px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 32px 32px;
+  text-align: center;
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.15);
+}
+
+.proposal-gate-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.proposal-gate-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  color: var(--fg);
+}
+
+.proposal-gate-subtitle {
+  color: var(--fg-muted);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 24px;
+}
+
+.proposal-gate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#proposal-gate-input {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  width: 100%;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: var(--fg);
+}
+
+#proposal-gate-input::placeholder {
+  color: var(--fg-placeholder);
+  letter-spacing: 0.04em;
+}
+
+#proposal-gate-input:focus {
+  outline: 2px solid var(--action);
+  outline-offset: 2px;
+  border-color: var(--action);
+}
+
+.proposal-gate-button {
+  background: var(--action);
+  color: var(--action-fg);
+  border: none;
+  border-radius: 9999px;
+  padding: 11px 22px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: background-color 120ms ease;
+}
+
+.proposal-gate-button:hover {
+  background: var(--action-hover);
+}
+
+.proposal-gate-error {
+  color: hsl(6 63% 46%);
+  font-size: 12px;
+  margin: 14px 0 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ── Hero + JD button (opens modal) ───────────────── */
 
 .jd-aside {
