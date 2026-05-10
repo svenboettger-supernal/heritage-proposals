@@ -5,7 +5,7 @@
      Change PASSWORD below to whatever Heritage should be told.
      The gate persists per browser via localStorage. */
   var GATE_KEY = 'supernal_heritage_unlocked';
-  var PASSWORD = 'heritage';
+  var PASSWORD = 'AI-native';
 
   function unlock() {
     try { localStorage.setItem(GATE_KEY, '1'); } catch (e) {}
