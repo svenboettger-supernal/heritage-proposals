@@ -280,9 +280,15 @@ td.col-phase, td.col-item {
   color: var(--fg);
 }
 
+td.col-phase {
+  width: 24%;
+  min-width: 200px;
+}
+
 td.col-meta {
   color: var(--fg-muted);
   white-space: nowrap;
+  width: 1%;
 }
 
 /* ── Cards ────────────────────────────────────────── */
