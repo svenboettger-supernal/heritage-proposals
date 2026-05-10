@@ -587,7 +587,7 @@ td a:hover, p a:hover {
 /* ── Hero + JD button (opens modal) ───────────────── */
 
 .jd-aside {
-  margin-top: 24px;
+  margin-top: 0;
 }
 
 .jd-button {
@@ -827,7 +827,7 @@ td a:hover, p a:hover {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;
   gap: 56px;
-  align-items: start;
+  align-items: end;
   padding-top: 96px;
   padding-bottom: 64px;
 }
