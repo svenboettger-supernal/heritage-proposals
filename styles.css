@@ -1339,11 +1339,11 @@ td a:hover, p a:hover {
 
 .gantt-wrap {
   margin-top: 24px;
-  margin-bottom: 24px;
-  overflow-x: auto;
+  margin-bottom: 56px;
   border: 1px solid var(--border);
   border-radius: 12px;
   background: var(--bg-card);
+  position: relative;
 }
 
 .gantt {
@@ -1517,8 +1517,8 @@ td a:hover, p a:hover {
 
 .gantt-today {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  top: 48px;
+  bottom: -32px;
   width: 2px;
   background: hsl(2 78% 54%);
   z-index: 5;
@@ -1527,7 +1527,7 @@ td a:hover, p a:hover {
 
 .gantt-today-pill {
   position: absolute;
-  bottom: 12px;
+  top: 100%;
   left: 1px;
   transform: translateX(-50%);
   background: hsl(2 78% 54%);
