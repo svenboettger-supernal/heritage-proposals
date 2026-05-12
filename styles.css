@@ -1687,6 +1687,14 @@ html.locked .proposal-gate {
 
 /* ── Executive summary (index page) ───────────────── */
 
+.client-block.exec-summary {
+  padding: 80px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-top: 80px;
+  margin-bottom: 0;
+}
+
 .exec-summary-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
