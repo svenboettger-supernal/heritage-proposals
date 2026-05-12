@@ -521,6 +521,21 @@ hr {
   transition: opacity 200ms ease, transform 200ms ease;
 }
 
+.index-card::before {
+  content: "Click to see more";
+  position: absolute;
+  top: 32px;
+  right: 58px;
+  font-size: 0.75rem;
+  line-height: 18px;
+  color: var(--fg-muted);
+  letter-spacing: 0.01em;
+  opacity: 0.55;
+  transition: opacity 200ms ease, transform 200ms ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
 .index-card:hover {
   border-color: var(--border-strong);
   transform: translateY(-1px);
@@ -530,6 +545,16 @@ hr {
 .index-card:hover::after {
   opacity: 1;
   transform: translate(2px, -2px);
+}
+
+.index-card:hover::before {
+  opacity: 1;
+}
+
+@media (max-width: 720px) {
+  .index-card::before {
+    display: none;
+  }
 }
 
 .index-card .kicker { color: var(--action); margin-bottom: 12px; }
@@ -610,7 +635,8 @@ td a:hover, p a:hover {
   padding-right: 32px;
 }
 
-.index-card--static::after {
+.index-card--static::after,
+.index-card--static::before {
   display: none;
 }
 
