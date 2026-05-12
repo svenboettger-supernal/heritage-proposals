@@ -4,18 +4,21 @@
 
 :root {
   --bg-page: hsl(33 20% 97%);
-  --bg-card: hsl(30 8% 99%);
+  --bg-card: hsl(33 20% 98%);
+  --bg-card-hover: hsl(33 28% 93%);
   --bg-sidebar: hsl(33 22% 87%);
   --bg-muted: hsl(33 22% 89%);
   --fg: hsl(33 4% 6%);
   --fg-muted: hsl(33 10% 34%);
   --fg-placeholder: hsl(33 12% 50%);
   --border: hsl(33 18% 80%);
+  --border-subtle: hsl(33 22% 89%);
   --border-strong: hsl(33 14% 67%);
   --action: hsl(167 16% 48%);
   --action-hover: hsl(167 14% 34%);
   --action-subtle: hsl(167 14% 90%);
   --action-fg: hsl(0 0% 100%);
+  --shadow-color: hsl(33 4% 6% / 0.08);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -27,7 +30,7 @@ body {
   background: var(--bg-page);
   color: var(--fg);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.6;
   font-feature-settings: 'ss01', 'cv11';
   -webkit-font-smoothing: antialiased;
@@ -54,7 +57,7 @@ body {
   align-items: center;
   padding: 32px 0;
   border-bottom: 1px solid var(--border);
-  font-size: 13px;
+  font-size: 0.8125rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--fg-muted);
@@ -87,7 +90,7 @@ body {
   gap: 8px;
   margin: 28px 0 0;
   padding: 8px 14px 8px 12px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.02em;
   color: var(--fg-muted);
@@ -95,7 +98,7 @@ body {
   border: 1px solid var(--border);
   border-radius: 9999px;
   text-decoration: none;
-  transition: color 120ms ease, border-color 120ms ease, background-color 120ms ease;
+  transition: color 200ms ease, border-color 200ms ease, background-color 200ms ease;
 }
 
 .back-link:hover {
@@ -106,7 +109,7 @@ body {
 
 .back-link .arrow {
   display: inline-block;
-  transition: transform 120ms ease;
+  transition: transform 200ms ease;
   font-family: 'Inter', sans-serif;
   line-height: 1;
 }
@@ -121,7 +124,7 @@ body {
 }
 
 .kicker {
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -131,7 +134,7 @@ body {
 
 h1 {
   font-family: 'Lora', Georgia, serif;
-  font-size: clamp(40px, 6vw, 64px);
+  font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -139,7 +142,7 @@ h1 {
 }
 
 .lede {
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1.55;
   color: var(--fg-muted);
   margin: 0;
@@ -160,7 +163,7 @@ section.block {
 }
 
 .section-grid > .section-label {
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -182,7 +185,7 @@ section.block {
 
 h2 {
   font-family: 'Lora', Georgia, serif;
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -191,7 +194,7 @@ h2 {
 
 h3 {
   font-family: 'Inter', sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.005em;
@@ -201,7 +204,7 @@ h3 {
 
 h4 {
   font-family: 'Inter', sans-serif;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -251,7 +254,7 @@ ul.unbulleted > li {
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 th, td {
@@ -268,7 +271,7 @@ tbody tr:last-child td {
 
 th {
   font-weight: 500;
-  font-size: 12px;
+  font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--fg-muted);
@@ -322,15 +325,15 @@ td.col-meta {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 22px;
+  padding: 14px 22px;
   border-radius: 9999px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.875rem;
   letter-spacing: 0.01em;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 120ms ease, border-color 120ms ease;
+  transition: background-color 200ms ease, border-color 200ms ease;
   border: 1px solid transparent;
 }
 
@@ -372,7 +375,7 @@ td.col-meta {
 }
 
 .next-step p {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: var(--fg-muted);
   margin-bottom: 32px;
   max-width: 560px;
@@ -387,7 +390,7 @@ td.col-meta {
 footer.colophon {
   padding: 40px 0 60px;
   border-top: 1px solid var(--border);
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--fg-muted);
   display: flex;
   justify-content: center;
@@ -409,7 +412,7 @@ a {
   color: var(--action);
   text-decoration: none;
   border-bottom: 1px solid var(--action-subtle);
-  transition: border-color 120ms ease;
+  transition: border-color 200ms ease;
 }
 
 a:hover { border-bottom-color: var(--action); }
@@ -459,7 +462,7 @@ hr {
 }
 
 .client-block-header .section-label {
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -469,13 +472,13 @@ hr {
 }
 
 .client-block-header h2 {
-  font-size: 30px;
+  font-size: 1.875rem;
   margin: 0 0 12px;
 }
 
 .client-block-header p {
   color: var(--fg-muted);
-  font-size: 16px;
+  font-size: 1rem;
   margin: 0;
   max-width: 580px;
 }
@@ -500,7 +503,7 @@ hr {
   text-decoration: none;
   color: inherit;
   border-bottom: 1px solid var(--border);
-  transition: border-color 120ms ease, transform 120ms ease;
+  transition: border-color 200ms ease, transform 200ms ease;
 }
 
 .index-card:hover {
@@ -511,7 +514,7 @@ hr {
 .index-card .kicker { color: var(--action); margin-bottom: 12px; }
 
 .index-card h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
   margin: 0 0 8px;
   font-family: 'Lora', Georgia, serif;
   font-weight: 600;
@@ -541,7 +544,7 @@ hr {
   padding: 24px;
   text-decoration: none;
   color: inherit;
-  transition: border-color 120ms ease, transform 120ms ease;
+  transition: border-color 200ms ease, transform 200ms ease;
 }
 
 .related-card:hover {
@@ -552,20 +555,20 @@ hr {
 .related-card .kicker {
   color: var(--action);
   margin-bottom: 8px;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .related-card h3 {
   margin: 0 0 6px;
   font-family: 'Lora', Georgia, serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.25;
 }
 
 .related-card p {
   color: var(--fg-muted);
-  font-size: 14px;
+  font-size: 0.875rem;
   margin: 0;
   line-height: 1.5;
 }
@@ -606,7 +609,7 @@ html.locked .proposal-gate {
   align-items: center;
   justify-content: center;
   padding: 32px;
-  z-index: 99999;
+  z-index: 40;
 }
 
 .proposal-gate-card {
@@ -614,10 +617,10 @@ html.locked .proposal-gate {
   max-width: 360px;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 12px;
   padding: 36px 32px 32px;
   text-align: center;
-  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 15px var(--shadow-color), 0 4px 6px var(--shadow-color);
 }
 
 .proposal-gate-logo {
@@ -632,7 +635,7 @@ html.locked .proposal-gate {
 
 .proposal-gate-eyebrow {
   font-family: 'Inter', sans-serif;
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--fg-muted);
@@ -642,7 +645,7 @@ html.locked .proposal-gate {
 
 .proposal-gate-title {
   font-family: 'Lora', Georgia, serif;
-  font-size: 26px;
+  font-size: 1.625rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.2;
@@ -652,7 +655,7 @@ html.locked .proposal-gate {
 
 .proposal-gate-subtitle {
   color: var(--fg-muted);
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.5;
   margin: 0 0 24px;
 }
@@ -669,9 +672,9 @@ html.locked .proposal-gate {
   border-radius: 8px;
   padding: 12px 14px;
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   width: 100%;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px var(--shadow-color);
   text-align: center;
   letter-spacing: 0.04em;
   color: var(--fg);
@@ -695,11 +698,11 @@ html.locked .proposal-gate {
   border-radius: 9999px;
   padding: 11px 22px;
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   cursor: pointer;
   letter-spacing: 0.01em;
-  transition: background-color 120ms ease;
+  transition: background-color 200ms ease;
 }
 
 .proposal-gate-button:hover {
@@ -708,7 +711,7 @@ html.locked .proposal-gate {
 
 .proposal-gate-error {
   color: hsl(6 63% 46%);
-  font-size: 12px;
+  font-size: 0.75rem;
   margin: 14px 0 0;
 }
 
@@ -738,19 +741,19 @@ html.locked .proposal-gate {
   text-align: left;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 12px;
   padding: 24px 28px 22px;
   cursor: pointer;
   font-family: 'Inter', sans-serif;
-  transition: background-color 140ms ease, border-color 140ms ease, transform 140ms ease, box-shadow 140ms ease;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.03);
+  transition: background-color 200ms ease, border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+  box-shadow: 0 1px 2px var(--shadow-color);
 }
 
 .jd-button:hover {
-  background: hsl(33 22% 96%);
+  background: var(--bg-card-hover);
   border-color: var(--border-strong);
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px -10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px var(--shadow-color);
 }
 
 .jd-button:focus-visible {
@@ -759,7 +762,7 @@ html.locked .proposal-gate {
 }
 
 .jd-button .jd-button-eyebrow {
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--fg-muted);
@@ -768,7 +771,7 @@ html.locked .proposal-gate {
 
 .jd-button .jd-button-title {
   font-family: 'Lora', Georgia, serif;
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 600;
   letter-spacing: -0.005em;
   line-height: 1.2;
@@ -781,8 +784,8 @@ html.locked .proposal-gate {
   align-items: center;
   margin-top: 12px;
   padding-top: 14px;
-  border-top: 1px solid hsl(33 18% 92%);
-  font-size: 13px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.8125rem;
   color: var(--fg-muted);
   letter-spacing: 0.01em;
 }
@@ -790,9 +793,9 @@ html.locked .proposal-gate {
 .jd-button .jd-button-arrow {
   display: inline-block;
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--fg-muted);
-  transition: transform 140ms ease, color 140ms ease;
+  transition: transform 200ms ease, color 200ms ease;
 }
 
 .jd-button:hover .jd-button-arrow {
@@ -805,7 +808,7 @@ html.locked .proposal-gate {
 .jd-modal {
   position: fixed;
   inset: 0;
-  z-index: 1000;
+  z-index: 40;
   display: none;
   align-items: center;
   justify-content: center;
@@ -814,7 +817,7 @@ html.locked .proposal-gate {
 
 .jd-modal[aria-hidden="false"] {
   display: flex;
-  animation: jd-fade 180ms ease-out;
+  animation: jd-fade 300ms ease-out;
 }
 
 @keyframes jd-fade {
@@ -825,7 +828,7 @@ html.locked .proposal-gate {
 .jd-modal-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(20, 18, 16, 0.7);
+  background: hsl(33 4% 6% / 0.7);
   cursor: pointer;
 }
 
@@ -833,15 +836,15 @@ html.locked .proposal-gate {
   position: relative;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 18px;
+  border-radius: 12px;
   padding: 56px 56px 48px;
   max-width: 620px;
   width: 100%;
   max-height: 88vh;
   overflow-y: auto;
-  box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.45), 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px var(--shadow-color), 0 4px 6px var(--shadow-color);
   z-index: 1;
-  animation: jd-slide 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: jd-slide 300ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 @keyframes jd-slide {
@@ -859,13 +862,13 @@ html.locked .proposal-gate {
   border: none;
   border-radius: 50%;
   color: var(--fg-muted);
-  font-size: 22px;
+  font-size: 1.375rem;
   line-height: 1;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 120ms ease, color 120ms ease;
+  transition: background 200ms ease, color 200ms ease;
 }
 
 .jd-modal-close:hover {
@@ -874,7 +877,7 @@ html.locked .proposal-gate {
 }
 
 .jd-modal-eyebrow {
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--fg-muted);
@@ -884,7 +887,7 @@ html.locked .proposal-gate {
 
 .jd-modal h2 {
   font-family: 'Lora', Georgia, serif;
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -893,7 +896,7 @@ html.locked .proposal-gate {
 
 .jd-modal-subtitle {
   color: var(--fg-muted);
-  font-size: 15px;
+  font-size: 0.9375rem;
   margin: 0 0 32px;
   line-height: 1.5;
 }
@@ -909,7 +912,7 @@ html.locked .proposal-gate {
   counter-increment: jd-counter;
   position: relative;
   padding: 22px 0 22px 44px;
-  border-top: 1px solid hsl(33 18% 92%);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .jd-modal-list li:first-child {
@@ -928,7 +931,7 @@ html.locked .proposal-gate {
   top: 22px;
   width: 28px;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--fg-muted);
   letter-spacing: -0.02em;
@@ -940,7 +943,7 @@ html.locked .proposal-gate {
 
 .jd-modal-list .action {
   display: block;
-  font-size: 15.5px;
+  font-size: 0.96875rem;
   line-height: 1.55;
   color: var(--fg);
 }
@@ -948,7 +951,7 @@ html.locked .proposal-gate {
 .jd-modal-list .when {
   display: block;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--fg-muted);
   margin-top: 10px;
   letter-spacing: -0.01em;
@@ -958,7 +961,7 @@ html.locked .proposal-gate {
 @media (max-width: 600px) {
   .jd-modal { padding: 16px; }
   .jd-modal-content { padding: 40px 28px 32px; }
-  .jd-modal h2 { font-size: 24px; }
+  .jd-modal h2 { font-size: 1.5rem; }
 }
 
 /* ── Hero + JD card layout ────────────────────────── */
@@ -979,14 +982,14 @@ html.locked .proposal-gate {
 .tom-jd {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 12px;
   padding: 28px 28px 24px;
   margin-top: 24px;
 }
 
 .tom-jd .tom-jd-kicker {
   font-family: 'Inter', sans-serif;
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--fg-muted);
@@ -996,7 +999,7 @@ html.locked .proposal-gate {
 
 .tom-jd h2 {
   font-family: 'Lora', Georgia, serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.3;
   margin: 0 0 20px;
@@ -1013,8 +1016,8 @@ html.locked .proposal-gate {
 .tom-jd ol li {
   counter-increment: tom-jd-counter;
   padding: 14px 0;
-  border-top: 1px solid hsl(33 18% 92%);
-  font-size: 13.5px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.84375rem;
   line-height: 1.5;
   display: grid;
   grid-template-columns: 22px 1fr;
@@ -1034,7 +1037,7 @@ html.locked .proposal-gate {
 .tom-jd ol li::before {
   content: counter(tom-jd-counter);
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 500;
   color: var(--fg-muted);
   letter-spacing: -0.01em;
@@ -1044,7 +1047,7 @@ html.locked .proposal-gate {
 .tom-jd ol li .when {
   display: block;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 10.5px;
+  font-size: 0.65625rem;
   color: var(--fg-muted);
   margin-top: 6px;
   letter-spacing: -0.01em;
@@ -1063,7 +1066,7 @@ html.locked .proposal-gate {
 .phase-group {
   margin-top: 48px;
   padding-top: 32px;
-  border-top: 1px solid hsl(33 18% 92%);
+  border-top: 1px solid var(--border-subtle);
 }
 
 .phase-group:first-of-type {
@@ -1074,7 +1077,7 @@ html.locked .proposal-gate {
 
 .phase-group .phase-label {
   font-family: 'Inter', sans-serif;
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--fg-muted);
@@ -1084,7 +1087,7 @@ html.locked .proposal-gate {
 
 .phase-group h3 {
   font-family: 'Lora', Georgia, serif;
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 600;
   line-height: 1.25;
   margin: 0 0 16px;
@@ -1095,7 +1098,7 @@ html.locked .proposal-gate {
 .phase-group .phase-job {
   color: var(--fg-muted);
   margin: 0 0 20px;
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.6;
   max-width: 640px;
 }
@@ -1126,7 +1129,7 @@ html.locked .proposal-gate {
 }
 
 .pricing-section-header .section-label {
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1136,7 +1139,7 @@ html.locked .proposal-gate {
 }
 
 .pricing-section-header h2 {
-  font-size: 30px;
+  font-size: 1.875rem;
   margin: 0 0 12px;
 }
 
@@ -1152,7 +1155,7 @@ html.locked .proposal-gate {
 
 .pricing-table-title {
   font-family: 'Inter', sans-serif;
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--fg-muted);
@@ -1175,7 +1178,7 @@ html.locked .proposal-gate {
 .pricing-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 .pricing-table thead th {
@@ -1183,7 +1186,7 @@ html.locked .proposal-gate {
   vertical-align: middle;
   padding: 18px 28px;
   font-family: 'Inter', sans-serif;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1199,7 +1202,7 @@ html.locked .proposal-gate {
 
 .pricing-table tbody td {
   padding: 20px 28px;
-  border-bottom: 1px solid hsl(33 18% 92%);
+  border-bottom: 1px solid var(--border-subtle);
   vertical-align: top;
 }
 
@@ -1209,7 +1212,7 @@ html.locked .proposal-gate {
 
 .pricing-table .pt-item-name {
   font-family: 'Lora', Georgia, serif;
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.005em;
@@ -1218,7 +1221,7 @@ html.locked .proposal-gate {
 
 .pricing-table .pt-item-meta {
   font-family: 'Inter', sans-serif;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--fg-muted);
   margin-top: 4px;
   letter-spacing: 0.06em;
@@ -1227,14 +1230,14 @@ html.locked .proposal-gate {
 
 .pricing-table .pt-type {
   color: var(--fg-muted);
-  font-size: 13px;
+  font-size: 0.8125rem;
   letter-spacing: 0.04em;
 }
 
 .pricing-table .pt-price {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--fg);
   text-align: right;
   letter-spacing: -0.02em;
@@ -1245,7 +1248,7 @@ html.locked .proposal-gate {
 .pricing-table .pt-price-unit {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--fg-muted);
   margin-left: 4px;
   letter-spacing: 0;
@@ -1253,9 +1256,9 @@ html.locked .proposal-gate {
 
 .pricing-table tfoot td {
   padding: 18px 28px;
-  background: hsl(33 22% 96%);
+  background: var(--bg-card-hover);
   border-top: 1px solid var(--border);
-  border-bottom: 1px solid hsl(33 18% 92%);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .pricing-table tfoot tr:last-child td {
@@ -1264,14 +1267,14 @@ html.locked .proposal-gate {
 
 .pricing-table tfoot .pt-total-label {
   font-family: 'Inter', sans-serif;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: var(--fg);
   letter-spacing: 0.04em;
 }
 
 .pricing-table tfoot .pt-price {
-  font-size: 17px;
+  font-size: 1.0625rem;
   font-weight: 600;
 }
 
@@ -1289,7 +1292,7 @@ html.locked .proposal-gate {
 
 .pricing-amount {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 38px;
+  font-size: 2.375rem;
   font-weight: 500;
   color: var(--fg);
   margin: 0 0 8px;
@@ -1298,7 +1301,7 @@ html.locked .proposal-gate {
 }
 
 .pricing-amount .pricing-amount-meta {
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--fg-muted);
   margin-left: 6px;
   font-weight: 400;
@@ -1312,7 +1315,7 @@ html.locked .proposal-gate {
 
 .pricing-meta {
   color: var(--fg-muted);
-  font-size: 14px;
+  font-size: 0.875rem;
   margin: 0;
   max-width: 460px;
   line-height: 1.5;
@@ -1335,7 +1338,7 @@ html.locked .proposal-gate {
 }
 
 .timeline-section-header .section-label {
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1345,7 +1348,7 @@ html.locked .proposal-gate {
 }
 
 .timeline-section-header h2 {
-  font-size: 30px;
+  font-size: 1.875rem;
   margin: 0 0 12px;
 }
 
@@ -1370,7 +1373,7 @@ html.locked .proposal-gate {
 .timeline-axis {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1393,7 +1396,7 @@ html.locked .proposal-gate {
 }
 
 .timeline-info .kicker {
-  font-size: 11px;
+  font-size: 0.6875rem;
   letter-spacing: 0.1em;
   margin-bottom: 4px;
   color: var(--fg-muted);
@@ -1401,7 +1404,7 @@ html.locked .proposal-gate {
 
 .timeline-info h3 {
   font-family: 'Lora', Georgia, serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.25;
   margin: 0 0 6px;
@@ -1415,7 +1418,7 @@ html.locked .proposal-gate {
 .timeline-info h3 a:hover { color: var(--action); border-bottom: none; }
 
 .timeline-info .meta {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--fg-muted);
   margin: 0;
   font-family: 'JetBrains Mono', ui-monospace, monospace;
@@ -1423,7 +1426,7 @@ html.locked .proposal-gate {
 }
 
 .timeline-info .price-line {
-  font-size: 13px;
+  font-size: 0.8125rem;
   margin-top: 4px;
 }
 
@@ -1449,7 +1452,7 @@ html.locked .proposal-gate {
   left: 0;
   right: 0;
   height: 1px;
-  background: hsl(33 18% 90%);
+  background: var(--border-subtle);
   transform: translateY(-50%);
 }
 
@@ -1465,13 +1468,13 @@ html.locked .proposal-gate {
 
 .timeline-bar--video { background: hsl(9 41% 55%); }
 .timeline-bar--training { background: hsl(64 13% 45%); }
-.timeline-bar--mrr { background: hsl(32 73% 60%); }
+.timeline-bar--mrr { background: hsl(32 73% 69%); }
 .timeline-bar--build { background: var(--action); }
 
 @media (max-width: 720px) {
   .timeline { grid-template-columns: 1fr; row-gap: 16px; }
   .timeline-axis-spacer { display: none; }
-  .timeline-axis { font-size: 10px; }
+  .timeline-axis { font-size: 0.625rem; }
   .timeline-info { border-bottom: none; padding-bottom: 4px; }
 }
 
@@ -1500,7 +1503,7 @@ html.locked .proposal-gate {
 }
 
 .gantt-row + .gantt-row:not(.gantt-row--lines) {
-  border-top: 1px solid hsl(33 18% 90%);
+  border-top: 1px solid var(--border-subtle);
 }
 
 /* Header row with quarter labels */
@@ -1513,7 +1516,7 @@ html.locked .proposal-gate {
 .gantt-row--months .future {
   grid-column: span 1;
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--fg-muted);
   padding: 16px 0 16px 12px;
@@ -1530,7 +1533,7 @@ html.locked .proposal-gate {
 .gantt-row--months .quarter {
   grid-column: span 3;
   font-family: 'Inter', sans-serif;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -1566,7 +1569,7 @@ html.locked .proposal-gate {
 }
 
 .gantt-row--lines > span {
-  border-right: 1px solid hsl(33 18% 90%);
+  border-right: 1px solid var(--border-subtle);
 }
 
 .gantt-row--lines > span:last-child {
@@ -1585,7 +1588,7 @@ html.locked .proposal-gate {
 
 .gantt-row-first h3 {
   font-family: 'Lora', Georgia, serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.25;
   margin: 0 0 6px;
@@ -1612,7 +1615,7 @@ html.locked .proposal-gate {
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0.65;
-  transition: opacity 120ms ease, transform 120ms ease;
+  transition: opacity 200ms ease, transform 200ms ease;
   margin-top: 1px;
 }
 
@@ -1623,7 +1626,7 @@ html.locked .proposal-gate {
 
 .gantt-row-first .meta {
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: var(--fg-muted);
   margin: 0;
   letter-spacing: -0.01em;
@@ -1648,7 +1651,7 @@ html.locked .proposal-gate {
   margin: 0 2px;
   padding: 0;
   list-style: none;
-  transition: filter 120ms ease;
+  transition: filter 200ms ease;
 }
 
 .gantt-row:hover .gantt-row-bars li {
@@ -1660,7 +1663,7 @@ html.locked .proposal-gate {
   top: 48px;
   bottom: -32px;
   width: 2px;
-  background: hsl(2 78% 54%);
+  background: var(--action);
   z-index: 5;
   pointer-events: none;
 }
@@ -1670,14 +1673,24 @@ html.locked .proposal-gate {
   top: 100%;
   left: 1px;
   transform: translateX(-50%);
-  background: hsl(2 78% 54%);
-  color: hsl(0 0% 100%);
+  background: var(--action);
+  color: var(--action-fg);
   font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 600;
   padding: 5px 12px;
   border-radius: 9999px;
   white-space: nowrap;
   letter-spacing: 0.04em;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+/* ── Reduced motion ───────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
