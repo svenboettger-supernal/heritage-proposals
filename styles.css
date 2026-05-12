@@ -1691,8 +1691,12 @@ html.locked .proposal-gate {
   padding: 80px 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  margin-top: 80px;
+  margin-top: 0;
   margin-bottom: 0;
+}
+
+.client-block.exec-summary + .client-block {
+  padding-top: 80px;
 }
 
 .client-block.exec-summary .client-block-header {
