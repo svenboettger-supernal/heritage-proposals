@@ -495,20 +495,41 @@ hr {
 }
 
 .index-card {
+  position: relative;
   display: block;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 32px;
+  padding: 32px 64px 32px 32px;
   text-decoration: none;
   color: inherit;
   border-bottom: 1px solid var(--border);
-  transition: border-color 200ms ease, transform 200ms ease;
+  transition: border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+
+.index-card::after {
+  content: "";
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23736b62' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 3h5v5'/%3E%3Cpath d='M9 3 3.5 8.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  opacity: 0.55;
+  transition: opacity 200ms ease, transform 200ms ease;
 }
 
 .index-card:hover {
   border-color: var(--border-strong);
   transform: translateY(-1px);
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.index-card:hover::after {
+  opacity: 1;
+  transform: translate(2px, -2px);
 }
 
 .index-card .kicker { color: var(--action); margin-bottom: 12px; }
@@ -586,11 +607,17 @@ td a:hover, p a:hover {
 
 .index-card--static {
   cursor: default;
+  padding-right: 32px;
+}
+
+.index-card--static::after {
+  display: none;
 }
 
 .index-card--static:hover {
   transform: none;
   border-color: var(--border);
+  box-shadow: none;
 }
 
 /* ── Password gate ────────────────────────────────── */
