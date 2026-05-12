@@ -508,32 +508,26 @@ hr {
 }
 
 .index-card::after {
-  content: "";
-  position: absolute;
-  top: 32px;
-  right: 32px;
-  width: 18px;
-  height: 18px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23736b62' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 3h5v5'/%3E%3Cpath d='M9 3 3.5 8.5'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain;
-  opacity: 0.55;
-  transition: opacity 200ms ease, transform 200ms ease;
-}
-
-.index-card::before {
   content: "Click to see more";
   position: absolute;
-  top: 32px;
-  right: 58px;
+  top: 24px;
+  right: 24px;
+  padding: 7px 34px 7px 14px;
+  background-color: var(--bg-muted);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='%23736b62' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 3h5v5'/%3E%3Cpath d='M9 3 3.5 8.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 14px 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
   font-size: 0.75rem;
-  line-height: 18px;
+  line-height: 1;
   color: var(--fg-muted);
   letter-spacing: 0.01em;
-  opacity: 0.55;
-  transition: opacity 200ms ease, transform 200ms ease;
   white-space: nowrap;
   pointer-events: none;
+  opacity: 0.85;
+  transition: opacity 200ms ease, background-color 200ms ease, border-color 200ms ease;
 }
 
 .index-card:hover {
@@ -544,15 +538,12 @@ hr {
 
 .index-card:hover::after {
   opacity: 1;
-  transform: translate(2px, -2px);
-}
-
-.index-card:hover::before {
-  opacity: 1;
+  background-color: var(--bg-card-hover);
+  border-color: var(--border);
 }
 
 @media (max-width: 720px) {
-  .index-card::before {
+  .index-card::after {
     display: none;
   }
 }
@@ -635,8 +626,7 @@ td a:hover, p a:hover {
   padding-right: 32px;
 }
 
-.index-card--static::after,
-.index-card--static::before {
+.index-card--static::after {
   display: none;
 }
 
