@@ -1685,6 +1685,77 @@ html.locked .proposal-gate {
   box-shadow: 0 4px 6px var(--shadow-color);
 }
 
+/* ── Executive summary (index page) ───────────────── */
+
+.exec-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.exec-summary-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.exec-summary-card .kicker {
+  margin: 0;
+  color: var(--action);
+}
+
+.exec-summary-card .exec-summary-body {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--fg);
+  flex: 1;
+}
+
+.exec-summary-card .exec-summary-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.8125rem;
+}
+
+.exec-summary-card .exec-summary-meta .when {
+  color: var(--fg-muted);
+  letter-spacing: -0.01em;
+}
+
+.exec-summary-card .exec-summary-meta .price {
+  color: var(--fg);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.exec-summary-card .exec-summary-meta .price-unit {
+  color: var(--fg-muted);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  margin-left: 2px;
+  letter-spacing: 0;
+}
+
+@media (max-width: 720px) {
+  .exec-summary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ── Reduced motion ───────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
