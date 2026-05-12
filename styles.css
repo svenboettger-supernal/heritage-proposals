@@ -1695,6 +1695,11 @@ html.locked .proposal-gate {
   margin-bottom: 0;
 }
 
+.client-block.exec-summary .client-block-header {
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
 .exec-summary-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
