@@ -1698,6 +1698,8 @@ html.locked .proposal-gate {
 .client-block.exec-summary .client-block-header {
   grid-template-columns: 1fr;
   gap: 0;
+  justify-items: center;
+  text-align: center;
 }
 
 .exec-summary-grid {
