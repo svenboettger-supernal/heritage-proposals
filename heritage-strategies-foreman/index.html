@@ -102,8 +102,9 @@
             <li>Tasks missing an owner or due date wait in a review queue. They go live only after a Point Person fills in both fields. This enforces the Heritage no-dates standard at the source.</li>
             <li>Tasks have an owner, a due date, a status (To Do, In Progress, Blocked, Done), a priority (Low, Normal, High, Urgent), and labels for filtering.</li>
             <li>A meeting list view shows every upcoming and past meeting at a glance, with type and owner.</li>
-            <li>Schedule changes are flagged and subject to approval.</li>
-            <li>One-time migration from today's Excel meeting trackers and SharePoint scopes. After that, updates flow in from Outlook, recorded meetings, and direct edits in the app.</li>
+            <li>Outlook remains the source of truth for the calendar. Foreman pulls calendar changes on a roughly fifteen-minute cycle, read only. Nothing is written back to Outlook, and all task creation happens in Foreman.</li>
+            <li>Every schedule change is flagged into a review report. Operations marks each change good or not.</li>
+            <li>One-time migration from today's Excel meeting trackers and SharePoint scopes. After that, calendar updates flow in from Outlook, and task updates come from recorded meetings and direct edits in the app.</li>
             <li>Web interface.</li>
             <li>Ask Anything: any team member can ask Foreman a question in plain English by chat or by voice on a phone. Answers come back in seconds, with sources.</li>
             <li>Every Foreman answer links back to its source (meeting letter, task, or calendar event). Verifiable in one click.</li>
