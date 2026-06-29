@@ -1923,6 +1923,91 @@ html.locked .proposal-gate {
   }
 }
 
+/* ── Comparison table highlight column ────────────── */
+
+th.col-highlight {
+  color: var(--action-hover);
+  background: var(--action-subtle);
+}
+
+/* ── Security ladder (Dedicated Private Cloud) ────── */
+
+.stage-ladder {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 24px 0 8px;
+}
+
+.stage-step {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 16px 16px;
+}
+
+.stage-step .stage-step-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin: 0 0 6px;
+}
+
+.stage-step h3 {
+  font-size: 1rem;
+  margin: 0 0 6px;
+}
+
+.stage-step p:last-child {
+  font-size: 0.8125rem;
+  color: var(--fg-muted);
+  margin: 0;
+}
+
+.stage-step--today {
+  border-color: var(--border-strong);
+}
+
+.stage-step--recommended {
+  border-color: var(--action);
+  background: var(--action-subtle);
+}
+
+.stage-badge {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  background: var(--bg-muted);
+  border-radius: 999px;
+  padding: 3px 9px;
+  margin-bottom: 10px;
+}
+
+.stage-badge--rec {
+  color: var(--action-fg);
+  background: var(--action);
+}
+
+@media (max-width: 760px) {
+  .stage-ladder {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 460px) {
+  .stage-ladder {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ── Reduced motion ───────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>(function(){try{if(localStorage.getItem("supernal_heritage_unlocked")==="1"){document.documentElement.classList.add("unlocked");}else{document.documentElement.classList.add("locked");}}catch(e){document.documentElement.classList.add("locked");}})();</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Heritage · Dedicated Private Cloud · Supernal SOW</title>
+<meta name="description" content="Statement of Work for the Dedicated Private Cloud: Heritage's own isolated Google Cloud project, the same frontier models served privately under a Google BAA.">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="proposal-gate" id="proposal-gate" role="dialog" aria-modal="true" aria-labelledby="proposal-gate-title">
+  <div class="proposal-gate-card">
+    <div class="proposal-gate-logo" role="img" aria-label="Supernal"></div>
+    <h1 id="proposal-gate-title" class="visually-hidden">Heritage proposals</h1>
+    <p class="proposal-gate-subtitle">Enter the password to view.</p>
+    <form id="proposal-gate-form" class="proposal-gate-form" autocomplete="off">
+      <label for="proposal-gate-input" class="visually-hidden">Password</label>
+      <input type="password" id="proposal-gate-input" placeholder="Password" autocomplete="off" required>
+      <button type="submit" class="proposal-gate-button">Unlock</button>
+    </form>
+    <p id="proposal-gate-error" class="proposal-gate-error" hidden>Incorrect password.</p>
+  </div>
+</div>
+
+<div class="container">
+  <header class="masthead">
+    <a class="brand" href="../" aria-label="Supernal"><img src="../assets/supernal-logo.svg" alt="Supernal"></a>
+    <div class="meta">
+      <span>Statement of Work for Heritage</span>
+    </div>
+  </header>
+
+  <a class="back-link" href="../"><span class="arrow">&larr;</span> All proposals</a>
+
+  <section class="hero">
+    <p class="kicker">Secure Operations</p>
+    <h1>Dedicated Private Cloud</h1>
+    <p class="lede">Heritage's own isolated Google Cloud project, with the same frontier models served privately through Vertex AI under a Google BAA. Same models, same accuracy, full isolation. Operated as a managed service.</p>
+  </section>
+</div>
+
+<div class="container">
+
+  <section class="block">
+    <div class="section-grid">
+      <p class="section-label">01 / Overview</p>
+      <div class="section-body">
+        <h2>The brief</h2>
+        <p>Heritage data already runs in a Supernal-controlled cloud, on frontier models that never train on it. The dedicated private cloud moves Heritage into its own isolated Google Cloud project, with the same frontier models served privately through Vertex AI under a Google BAA. The models and accuracy do not change, only the isolation does.</p>
+        <p>Supernal provisions, runs, and maintains the environment as a managed service. Heritage gets a dedicated store, its own audit logs, and nothing shared with another client, with no change to the day-to-day experience for the team.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-grid">
+      <p class="section-label">02 / What changes</p>
+      <div class="section-body">
+        <h2>Today and the dedicated private cloud</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th></th><th>Today</th><th class="col-highlight">Dedicated Private Cloud</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="col-item">Environment</td><td class="col-meta">Shared Supernal project on Google Cloud</td><td>Isolated GCP project, Heritage only</td></tr>
+              <tr><td class="col-item">Compute &amp; network</td><td class="col-meta">Shared with other Supernal clients</td><td>Dedicated, nothing shared</td></tr>
+              <tr><td class="col-item">Models &amp; accuracy</td><td class="col-meta">Frontier models on Vertex AI</td><td>Same models, same accuracy</td></tr>
+              <tr><td class="col-item">Data &amp; training</td><td class="col-meta">Processed in full, never trained on</td><td>Under a Google BAA, not retained by the provider</td></tr>
+              <tr><td class="col-item">Storage &amp; audit</td><td class="col-meta">Shared store, RBAC, SOC 2 Type II</td><td>Dedicated Heritage Vault, own audit logs</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-grid">
+      <p class="section-label">03 / The ladder</p>
+      <div class="section-body">
+        <h2>Five stages of isolation</h2>
+        <p>Each stage adds isolation without changing the models Heritage uses. Heritage is at Stage 3 today. The dedicated private cloud is Stage 4, the recommended step for a platform serving partner firms and their clients.</p>
+        <div class="stage-ladder">
+          <div class="stage-step">
+            <p class="stage-step-label">Stage 1</p>
+            <h3>Public tools</h3>
+            <p>Retail ChatGPT, which trains on uploads.</p>
+          </div>
+          <div class="stage-step">
+            <p class="stage-step-label">Stage 2</p>
+            <h3>Team plans</h3>
+            <p>Paid plans with training off, still shared.</p>
+          </div>
+          <div class="stage-step stage-step--today">
+            <span class="stage-badge">Today</span>
+            <p class="stage-step-label">Stage 3</p>
+            <h3>Shared cloud</h3>
+            <p>Isolated space in Supernal's shared cloud.</p>
+          </div>
+          <div class="stage-step stage-step--recommended">
+            <span class="stage-badge stage-badge--rec">Recommended</span>
+            <p class="stage-step-label">Stage 4</p>
+            <h3>Private cloud</h3>
+            <p>Your own isolated Google Cloud project.</p>
+          </div>
+          <div class="stage-step">
+            <p class="stage-step-label">Stage 5</p>
+            <h3>Private model</h3>
+            <p>Own model trained only on your data.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-grid">
+      <p class="section-label">04 / Scope</p>
+      <div class="section-body">
+        <h2>What the build covers</h2>
+        <ul>
+          <li>A dedicated, isolated Google Cloud project for Heritage, with no compute, network, or storage shared with any other client.</li>
+          <li>The same frontier models served privately through Vertex AI, under a Google BAA, with data processed but not retained by the provider.</li>
+          <li>Migration of the Heritage workloads and the Heritage Vault into the dedicated project, with no change to models or accuracy.</li>
+          <li>A dedicated store with role-based access control and Heritage's own audit logs.</li>
+          <li>Operated as a managed service: Supernal provisions, monitors, patches, and maintains the environment.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-grid">
+      <p class="section-label">05 / Timeline</p>
+      <div class="section-body">
+        <h2>Provisioned over the build window</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Phase</th><th>Duration</th><th>Outcome</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="col-phase">Provision and migrate</td><td class="col-meta">Around Aug to Sep 2026</td><td>Isolated GCP project stood up, frontier models served privately through Vertex AI under a Google BAA, Heritage workloads and Vault migrated, dedicated audit logs live.</td></tr>
+              <tr><td class="col-phase">Managed service</td><td class="col-meta">Ongoing</td><td>Supernal monitors, patches, and maintains the environment. Models and accuracy unchanged, only the isolation does.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-grid">
+      <p class="section-label">Investment</p>
+      <div class="section-body">
+        <h2>Pricing</h2>
+        <div class="pricing-card">
+          <p class="pricing-amount">$7,790.42 <span class="pricing-amount-meta">/ month</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    <span>Supernal AI</span>
+  </footer>
+
+</div>
+
+<script src="../app.js" defer></script>
+
+</body>
+</html>
