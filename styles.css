@@ -1923,6 +1923,19 @@ html.locked .proposal-gate {
   }
 }
 
+/* ── Brand-video sample links ─────────────────────── */
+
+.option-sample { margin-top: 16px; font-size: 0.875rem; }
+.option-sample-note { display: block; color: var(--fg-muted); font-size: 0.8125rem; margin-top: 5px; }
+
+/* ── Help Desk tier table: balanced, wrapping columns ── */
+
+.tier-table { table-layout: fixed; }
+.tier-table th, .tier-table td { white-space: normal; }
+.tier-table th:nth-child(1), .tier-table td:nth-child(1) { width: 22%; min-width: 0; }
+.tier-table th:nth-child(2), .tier-table td:nth-child(2) { width: 38%; }
+.tier-table th:nth-child(3), .tier-table td:nth-child(3) { width: 40%; }
+
 /* ── Comparison table highlight column ────────────── */
 
 th.col-highlight {
