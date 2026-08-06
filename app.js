@@ -46,6 +46,26 @@
     setupGate();
   }
 
+  /* ── Scope-aware back navigation ──────────────────────────────
+     SOW detail pages are shared between the full proposal index
+     and the trimmed /core/ index. When a page is reached with
+     ?from=core, send "All proposals" and the logo back to /core/
+     instead of the full index. */
+
+  function applyScope() {
+    if (!/(^|[?&])from=core($|&)/.test(window.location.search)) return;
+    var targets = document.querySelectorAll('a.back-link[href="../"], a.brand[href="../"]');
+    for (var i = 0; i < targets.length; i++) {
+      targets[i].setAttribute('href', '../core/');
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyScope);
+  } else {
+    applyScope();
+  }
+
   /* ── Job Description modal ───────────────────────────────────── */
 
   function openModal(modal) {
